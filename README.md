@@ -1,6 +1,6 @@
 # Usage
 ## Integration 
-drag the MFWebStream.xcframework into your project,  ensure the copy clicked.
+Open the build foler, drag the MFWebStream.xcframework into your project,  ensure the copy clicked.
 go to the general tab, open the _Frameworks,_ _Libraries, and Embedded Content_ section, change **Do Not Embed** to **Embed & Sign**
 ## Use
 `import MFWebStream`

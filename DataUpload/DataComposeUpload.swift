@@ -12,14 +12,22 @@ public class DataComposeUpload: NSObject{
     
     /// make the upload payload
     /// - Parameters:
-    ///   - info: the keys must be sorted ,a - b - c - d
+    ///   - info: json string
     ///   - IMEI: device IMEI
     /// - Returns: description
-    public static func makePayload(info: [String: Any], IMEI: String) -> [String: Any]? {
+    public static func makePayload(info: Any, IMEI: String) -> [String: Any]? {
 
-        guard let jsonData  = try? JSONSerialization.data(withJSONObject: info, options: [.sortedKeys]) else {
+        var jsonData: Data?
+        if info is String {
+            jsonData = (info as! String).data(using: .utf8)
+        } else if info is [String: Any] {
+            jsonData  = try? JSONSerialization.data(withJSONObject: info, options: [.sortedKeys])
+        }
+        
+        guard let jsonData = jsonData else {
             return nil
         }
+
         let hash = jsonData.sha256()
         guard let key = MFKeychainHelper.loadKey(name: MFKeychainHelper.PrivateKeyName) else {
             print("load key failed")
