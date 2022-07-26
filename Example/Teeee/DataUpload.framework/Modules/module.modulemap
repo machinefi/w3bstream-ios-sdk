@@ -1,0 +1,11 @@
+framework module DataUpload {
+  umbrella header "DataUpload.h"
+
+  export *
+  module * { export * }
+}
+
+module DataUpload.Swift {
+    header "DataUpload-Swift.h"
+    requires objc
+}
