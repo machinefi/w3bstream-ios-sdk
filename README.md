@@ -15,7 +15,7 @@ Generate the payload, the ecdsa sign progress is handled internally.
 ```
 guard let payload = DataComposeUpload.makePayload(info: data, IMEI: pebbleModel.IMEI) else { return }
 ```
-TIP: the type of data must be Dictionary or JSON. the keys must be sorted (a-z)
+TIP: the type of data must be json string
 
 Upload the data
 ```
