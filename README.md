@@ -1,4 +1,4 @@
-# webstream-ios-framework
+# w3bstream Framework For iOS
 
 
 ## Integration
