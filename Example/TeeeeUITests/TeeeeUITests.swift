@@ -1,10 +1,3 @@
-//
-//  TeeeeUITests.swift
-//  TeeeeUITests
-//
-//  Created by yuan zeng on 2022/6/30.
-//
-
 import XCTest
 
 class TeeeeUITests: XCTestCase {

@@ -1,10 +1,3 @@
-//
-//  DataUploadTests.swift
-//  DataUploadTests
-//
-//  Created by yuan zeng on 2022/6/29.
-//
-
 import XCTest
 @testable import DataUpload
 

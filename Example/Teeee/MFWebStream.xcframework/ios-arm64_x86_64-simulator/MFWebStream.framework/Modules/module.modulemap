@@ -1,4 +1,0 @@
-framework module MFWebStream {
-  header "MFWebStream-Swift.h"
-  requires objc
-}

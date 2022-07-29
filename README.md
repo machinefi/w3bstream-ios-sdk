@@ -1,32 +1,59 @@
 # w3bstream Framework For iOS
 
-
 ## Integration
-
-Drag `build/MFWebStream.xcframework` into your project,  make sure select `Copy` option.
+If running your project on the simulator, drag `build/Simulator/W3bStream.framework` into your project,  make sure select `Copy` option. If runnging on the device or submitting to Appstore, please use `build/ios/W3bStream.framework`.
 In `General` tab, open the _Frameworks,_ _Libraries, and Embedded Content_ section, change `Do Not Embed` to `Embed & Sign`
 
-More details  refer to [Embedding Frameworks In An App](https://developer.apple.com/library/archive/technotes/tn2435/_index.html
-)
+More details  refer to [Embedding Frameworks In An App](https://developer.apple.com/library/archive/technotes/tn2435/_index.html)
 ## Usage
 
 ### Create Device
 
 ```
-guard let info = MFDevice.create() else { return }
-let IMEI = info.0
-let SN = info.1
+  let device = W3bStream.create()!
+  let imei = device.IMEI
+	let sn= device.SN
 ```
-
-### Generate Payload
-After generate payload, the ecdsa sign progress is handled internally.
+### Config  
 ```
-guard let payload = DataComposeUpload.makePayload(info: data, IMEI: pebbleModel.IMEI) else { return }
+let httpsurl = URL(string: "https://xxxxx")!
+let wsurl = URL(string: "wss://xxxxx")!
+w3bStream.config(httpsurl, websocketUrl: wsurl)
+w3bStream.interval = 5 //5 seconds
 ```
-TIP: the type of data must be json string
-
+ The https url and websocket url are optional. But  one  must be set at least.
+ If interval is greater than 0. The upload action will be repeated in specified seconds. The default is 0.
 ### Upload Data
 ```
-DataComposeUpload.upload(url: url, payload: payload) { data, resp, err in}
+        //prepare the data
+        let random = 51652
+        let timestamp = 1658998925
+        let latitudeInt = 295661300
+        let longitudeInt = 1064685700
+        let jsonString = "{\"latitude\":\"\(latitudeInt)\",\"longitude\":\"\(longitudeInt)\",\"random\":\"\(random)\",\"snr\": 1024,\"timestamp\":\(timestamp)}"
+        //upload
+        w3bStream.upload(info: jsonString) { data, err in
+        } websocketCompletionHandler: { data in
+        }
 ```
+
+### Other
+You can also use only some of the capabilities in the SDK. 
+#### Generate Payload  
+```
+let payload = W3bStream.makePayload(info: info) 
+```
+TIP: the type of info must be json string
+####  independent Upload behaviour
+Https upload method
+```
+uploadViaHttps(url: URL, payload: payload) { data, res, err in
+                        httpsCompletionHandler?(data, err)
+                    }
+```
+websocket upload method
+```
+uploadViaWebsocket(payload: payload)
+```
+
 

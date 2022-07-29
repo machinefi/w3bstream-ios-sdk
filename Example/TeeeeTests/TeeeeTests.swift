@@ -1,10 +1,3 @@
-//
-//  TeeeeTests.swift
-//  TeeeeTests
-//
-//  Created by yuan zeng on 2022/6/30.
-//
-
 import XCTest
 @testable import Teeee
 

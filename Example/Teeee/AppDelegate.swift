@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  Teeee
-//
-//  Created by yuan zeng on 2022/6/30.
-//
-
 import UIKit
 
 @main

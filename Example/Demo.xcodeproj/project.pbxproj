@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F64FC97D2892D2A3003F3131 /* W3bStream.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F64FC97C2892D2A3003F3131 /* W3bStream.xcframework */; };
 		F6730A40286D557200628B36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6730A3F286D557200628B36 /* AppDelegate.swift */; };
 		F6730A42286D557200628B36 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6730A41286D557200628B36 /* SceneDelegate.swift */; };
 		F6730A44286D557200628B36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6730A43286D557200628B36 /* ViewController.swift */; };
@@ -16,8 +17,6 @@
 		F6730A57286D557300628B36 /* TeeeeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6730A56286D557300628B36 /* TeeeeTests.swift */; };
 		F6730A61286D557300628B36 /* TeeeeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6730A60286D557300628B36 /* TeeeeUITests.swift */; };
 		F6730A63286D557300628B36 /* TeeeeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6730A62286D557300628B36 /* TeeeeUITestsLaunchTests.swift */; };
-		F69390B9288155BC0098B4D2 /* MFWebStream.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F69390B7288155AA0098B4D2 /* MFWebStream.xcframework */; };
-		F69390BA288155BC0098B4D2 /* MFWebStream.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F69390B7288155AA0098B4D2 /* MFWebStream.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +43,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F69390BA288155BC0098B4D2 /* MFWebStream.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,6 +50,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F64FC97C2892D2A3003F3131 /* W3bStream.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = W3bStream.xcframework; path = ../../build/W3bStream.xcframework; sourceTree = "<group>"; };
 		F6730A3C286D557200628B36 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6730A3F286D557200628B36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6730A41286D557200628B36 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +64,6 @@
 		F6730A5C286D557300628B36 /* DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6730A60286D557300628B36 /* TeeeeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeeeeUITests.swift; sourceTree = "<group>"; };
 		F6730A62286D557300628B36 /* TeeeeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeeeeUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		F69390B7288155AA0098B4D2 /* MFWebStream.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = MFWebStream.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F69390B9288155BC0098B4D2 /* MFWebStream.xcframework in Frameworks */,
+				F64FC97D2892D2A3003F3131 /* W3bStream.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,7 +123,7 @@
 		F6730A3E286D557200628B36 /* Teeee */ = {
 			isa = PBXGroup;
 			children = (
-				F69390B7288155AA0098B4D2 /* MFWebStream.xcframework */,
+				F64FC97C2892D2A3003F3131 /* W3bStream.xcframework */,
 				F6730A3F286D557200628B36 /* AppDelegate.swift */,
 				F6730A41286D557200628B36 /* SceneDelegate.swift */,
 				F6730A43286D557200628B36 /* ViewController.swift */,
