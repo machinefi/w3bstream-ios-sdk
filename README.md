@@ -12,7 +12,7 @@ More details  refer to [Embedding Frameworks In An App](https://developer.apple.
 ```
   let device = W3bStream.create()!
   let imei = device.IMEI
-	let sn= device.SN
+  let sn= device.SN
 ```
 ### Config  
 ```
@@ -25,16 +25,16 @@ w3bStream.interval = 5 //5 seconds
  If interval is greater than 0. The upload action will be repeated in specified seconds. The default is 0.
 ### Upload Data
 ```
-        //prepare the data
-        let random = 51652
-        let timestamp = 1658998925
-        let latitudeInt = 295661300
-        let longitudeInt = 1064685700
-        let jsonString = "{\"latitude\":\"\(latitudeInt)\",\"longitude\":\"\(longitudeInt)\",\"random\":\"\(random)\",\"snr\": 1024,\"timestamp\":\(timestamp)}"
-        //upload
-        w3bStream.upload(info: jsonString) { data, err in
-        } websocketCompletionHandler: { data in
-        }
+//prepare the data
+let random = 51652
+let timestamp = 1658998925
+let latitudeInt = 295661300
+let longitudeInt = 1064685700
+let jsonString = "{\"latitude\":\"\(latitudeInt)\",\"longitude\":\"\(longitudeInt)\",\"random\":\"\(random)\",\"snr\": 1024,\"timestamp\":\(timestamp)}"
+//upload
+w3bStream.upload(info: jsonString) { data, err in
+} websocketCompletionHandler: { data in
+}
 ```
 
 ### Other
