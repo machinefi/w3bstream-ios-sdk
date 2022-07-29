@@ -111,10 +111,6 @@ public extension W3bStream {
                     if self.w3bWebsocketDidReceiveData == nil {
                         self.w3bWebsocketDidReceiveData = websocketCompletionHandler
                     }
-                    if WebSocketManager.shared.socket == nil || WebSocketManager.shared.socket.isConnected == false {
-                        WebSocketManager.shared.connnect()
-                    }
-
                     guard let payload = W3bStream.makeWebsocketPayload(info) else {
                         return
                     }

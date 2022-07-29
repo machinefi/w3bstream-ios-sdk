@@ -44,13 +44,24 @@ public class W3bStream: NSObject {
     ///   - httpsUrl: https url, optional
     ///   - websocketUrl: websocket url, optional
     public func config(_ httpsUrl: URL?=nil, websocketUrl: URL?=nil) {
-        Config.shared.httpsUrl = httpsUrl
-        Config.shared.websocketUrl = websocketUrl
+        if httpsUrl != nil {
+            Config.shared.httpsUrl = httpsUrl
+        }
         if websocketUrl != nil {
-            WebSocketManager.shared.connnect()
-            WebSocketManager.shared.websocketDidReceiveData = { [weak self] data in
-                self?.w3bWebsocketDidReceiveData?(data)
-            }
+            Config.shared.websocketUrl = websocketUrl
+            buildWebsocketConnect(websocketUrl!)
+
+        }
+    }
+    
+    /// config the websocket url,  the connect will be built then
+    /// - Parameters:
+    ///   - url: websocket url
+    public func buildWebsocketConnect(_ url: URL) {
+        Config.shared.websocketUrl = url
+        WebSocketManager.shared.connnect()
+        WebSocketManager.shared.websocketDidReceiveData = { [weak self] data in
+            self?.w3bWebsocketDidReceiveData?(data)
         }
     }
     
