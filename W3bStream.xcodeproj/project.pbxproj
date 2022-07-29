@@ -386,6 +386,7 @@
 				F6730A02286D372D00628B36 /* Ex */,
 				F67309EB286D348D00628B36 /* web3swift */,
 				F673099B286C0AE500628B36 /* MFKeychainHelper.swift */,
+				F6F510DF28925A4C008685CC /* WebSocketManager.swift */,
 				F673099D286C0BA700628B36 /* MFKeychainHelper+Ex.swift */,
 				F6730A03286D37AB00628B36 /* W3bStream.swift */,
 				F6F510D4289243A6008685CC /* Config.swift */,
@@ -583,7 +584,6 @@
 				F6F510D8289249C7008685CC /* KeychainWrapperSubscript.swift */,
 				F6F510D9289249C7008685CC /* SwiftKeychainWrapper.h */,
 				F6F510DA289249C7008685CC /* KeychainItemAccessibility.swift */,
-				F6F510DF28925A4C008685CC /* WebSocketManager.swift */,
 			);
 			path = SwiftKeychainWrapper;
 			sourceTree = "<group>";

@@ -24,9 +24,8 @@ class ViewController: UIViewController {
     var w3bStream: W3bStream = W3bStream()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tf1.text = "https://trustream-http.onrender.com/api/data"
-        tf2.text = "wss://w3w3bstream-example.onrender.com/"
+        tf1.text = "https://"
+        tf2.text = "wss://"
     }
 
     @IBAction func createdevice(_ sender: Any) {
