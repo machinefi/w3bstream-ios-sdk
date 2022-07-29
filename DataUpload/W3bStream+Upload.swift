@@ -124,6 +124,15 @@ public extension W3bStream {
             }
         }
         timer?.fire()
-    }        
+    }
+    
+    
+    /// stop the data uploading
+    func stop() {
+        if timer != nil {
+            timer?.invalidate()
+            timer = nil
+        }
+    }
 }
 
