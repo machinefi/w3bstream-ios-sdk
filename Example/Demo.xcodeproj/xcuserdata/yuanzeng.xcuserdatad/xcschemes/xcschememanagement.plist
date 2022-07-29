@@ -4,15 +4,53 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Demo.xcscheme_^#shared#^_</key>
+		<key>Demo(Device).xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>Demo(SimulatorARM).xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Demo(SimulatorX86).xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 		<key>Teeee.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>F608D5D328939B6800A64115</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F608D5E528939B7500A64115</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F6730A3B286D557200628B36</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F6730A51286D557300628B36</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F6730A5B286D557300628B36</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

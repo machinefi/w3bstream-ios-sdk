@@ -7,8 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F608D4BD28935FD400A64115 /* W3bStream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F608D4BB28935FCF00A64115 /* W3bStream.framework */; };
-		F608D4BE28935FD400A64115 /* W3bStream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F608D4BB28935FCF00A64115 /* W3bStream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F608D5D528939B6800A64115 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6730A43286D557200628B36 /* ViewController.swift */; };
+		F608D5D628939B6800A64115 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6730A3F286D557200628B36 /* AppDelegate.swift */; };
+		F608D5D728939B6800A64115 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6730A41286D557200628B36 /* SceneDelegate.swift */; };
+		F608D5DB28939B6800A64115 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6730A4A286D557300628B36 /* LaunchScreen.storyboard */; };
+		F608D5DC28939B6800A64115 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6730A48286D557300628B36 /* Assets.xcassets */; };
+		F608D5DD28939B6800A64115 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6730A45286D557200628B36 /* Main.storyboard */; };
+		F608D5E728939B7500A64115 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6730A43286D557200628B36 /* ViewController.swift */; };
+		F608D5E828939B7500A64115 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6730A3F286D557200628B36 /* AppDelegate.swift */; };
+		F608D5E928939B7500A64115 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6730A41286D557200628B36 /* SceneDelegate.swift */; };
+		F608D5ED28939B7500A64115 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6730A4A286D557300628B36 /* LaunchScreen.storyboard */; };
+		F608D5EE28939B7500A64115 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6730A48286D557300628B36 /* Assets.xcassets */; };
+		F608D5EF28939B7500A64115 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6730A45286D557200628B36 /* Main.storyboard */; };
+		F608D7412893ADD800A64115 /* W3bStream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F608D73D2893ADC900A64115 /* W3bStream.framework */; };
+		F608D7422893ADD800A64115 /* W3bStream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F608D73D2893ADC900A64115 /* W3bStream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F608D7442893BA2E00A64115 /* W3bStream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F608D73B2893ADC900A64115 /* W3bStream.framework */; };
+		F608D7452893BA2E00A64115 /* W3bStream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F608D73B2893ADC900A64115 /* W3bStream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F608D7462893C38600A64115 /* W3bStream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F608D7392893ADC900A64115 /* W3bStream.framework */; };
+		F608D7472893C38600A64115 /* W3bStream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F608D7392893ADC900A64115 /* W3bStream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F6730A40286D557200628B36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6730A3F286D557200628B36 /* AppDelegate.swift */; };
 		F6730A42286D557200628B36 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6730A41286D557200628B36 /* SceneDelegate.swift */; };
 		F6730A44286D557200628B36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6730A43286D557200628B36 /* ViewController.swift */; };
@@ -35,13 +51,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		F608D5DE28939B6800A64115 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F608D7452893BA2E00A64115 /* W3bStream.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F608D5F028939B7500A64115 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F608D7472893C38600A64115 /* W3bStream.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F6730A73286D55B600628B36 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F608D4BE28935FD400A64115 /* W3bStream.framework in Embed Frameworks */,
+				F608D7422893ADD800A64115 /* W3bStream.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,8 +87,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F608D4BB28935FCF00A64115 /* W3bStream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = W3bStream.framework; sourceTree = "<group>"; };
-		F6730A3C286D557200628B36 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F608D5E328939B6800A64115 /* Demo(SimulatorARM).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo(SimulatorARM).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F608D5E428939B6800A64115 /* Demo copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Demo copy-Info.plist"; path = "/Users/yuanzeng/Desktop/DataUpload/Example/Demo copy-Info.plist"; sourceTree = "<absolute>"; };
+		F608D5F528939B7500A64115 /* Demo(SimulatorX86).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo(SimulatorX86).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F608D5F628939B7500A64115 /* DemoSimulator(ARM) copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DemoSimulator(ARM) copy-Info.plist"; path = "/Users/yuanzeng/Desktop/DataUpload/Example/DemoSimulator(ARM) copy-Info.plist"; sourceTree = "<absolute>"; };
+		F608D7392893ADC900A64115 /* W3bStream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = W3bStream.framework; sourceTree = "<group>"; };
+		F608D73B2893ADC900A64115 /* W3bStream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = W3bStream.framework; sourceTree = "<group>"; };
+		F608D73D2893ADC900A64115 /* W3bStream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = W3bStream.framework; sourceTree = "<group>"; };
+		F6730A3C286D557200628B36 /* Demo(Device).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo(Device).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6730A3F286D557200628B36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6730A41286D557200628B36 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F6730A43286D557200628B36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,11 +107,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F608D5D828939B6800A64115 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F608D7442893BA2E00A64115 /* W3bStream.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F608D5EA28939B7500A64115 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F608D7462893C38600A64115 /* W3bStream.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F6730A39286D557200628B36 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F608D4BD28935FD400A64115 /* W3bStream.framework in Frameworks */,
+				F608D7412893ADD800A64115 /* W3bStream.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,21 +155,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F608D7382893ADC900A64115 /* Simulator x86 */ = {
+			isa = PBXGroup;
+			children = (
+				F608D7392893ADC900A64115 /* W3bStream.framework */,
+			);
+			path = "Simulator x86";
+			sourceTree = "<group>";
+		};
+		F608D73A2893ADC900A64115 /* Simulator arm */ = {
+			isa = PBXGroup;
+			children = (
+				F608D73B2893ADC900A64115 /* W3bStream.framework */,
+			);
+			path = "Simulator arm";
+			sourceTree = "<group>";
+		};
+		F608D73C2893ADC900A64115 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				F608D73D2893ADC900A64115 /* W3bStream.framework */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
 		F6730A33286D557200628B36 = {
 			isa = PBXGroup;
 			children = (
 				F6730A3E286D557200628B36 /* Teeee */,
 				F6730A3D286D557200628B36 /* Products */,
 				31FEC07A088FED8021AAA015 /* Frameworks */,
+				F608D5E428939B6800A64115 /* Demo copy-Info.plist */,
+				F608D5F628939B7500A64115 /* DemoSimulator(ARM) copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
 		F6730A3D286D557200628B36 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F6730A3C286D557200628B36 /* Demo.app */,
+				F6730A3C286D557200628B36 /* Demo(Device).app */,
 				F6730A52286D557300628B36 /* DemoTests.xctest */,
 				F6730A5C286D557300628B36 /* DemoUITests.xctest */,
+				F608D5E328939B6800A64115 /* Demo(SimulatorARM).app */,
+				F608D5F528939B7500A64115 /* Demo(SimulatorX86).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,7 +205,9 @@
 		F6730A3E286D557200628B36 /* Teeee */ = {
 			isa = PBXGroup;
 			children = (
-				F608D4BB28935FCF00A64115 /* W3bStream.framework */,
+				F608D73C2893ADC900A64115 /* Device */,
+				F608D73A2893ADC900A64115 /* Simulator arm */,
+				F608D7382893ADC900A64115 /* Simulator x86 */,
 				F6730A3F286D557200628B36 /* AppDelegate.swift */,
 				F6730A41286D557200628B36 /* SceneDelegate.swift */,
 				F6730A43286D557200628B36 /* ViewController.swift */,
@@ -132,9 +222,45 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F6730A3B286D557200628B36 /* Demo */ = {
+		F608D5D328939B6800A64115 /* Demo(SimulatorARM) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F6730A66286D557300628B36 /* Build configuration list for PBXNativeTarget "Demo" */;
+			buildConfigurationList = F608D5E028939B6800A64115 /* Build configuration list for PBXNativeTarget "Demo(SimulatorARM)" */;
+			buildPhases = (
+				F608D5D428939B6800A64115 /* Sources */,
+				F608D5D828939B6800A64115 /* Frameworks */,
+				F608D5DA28939B6800A64115 /* Resources */,
+				F608D5DE28939B6800A64115 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Demo(SimulatorARM)";
+			productName = Teeee;
+			productReference = F608D5E328939B6800A64115 /* Demo(SimulatorARM).app */;
+			productType = "com.apple.product-type.application";
+		};
+		F608D5E528939B7500A64115 /* Demo(SimulatorX86) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F608D5F228939B7500A64115 /* Build configuration list for PBXNativeTarget "Demo(SimulatorX86)" */;
+			buildPhases = (
+				F608D5E628939B7500A64115 /* Sources */,
+				F608D5EA28939B7500A64115 /* Frameworks */,
+				F608D5EC28939B7500A64115 /* Resources */,
+				F608D5F028939B7500A64115 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Demo(SimulatorX86)";
+			productName = Teeee;
+			productReference = F608D5F528939B7500A64115 /* Demo(SimulatorX86).app */;
+			productType = "com.apple.product-type.application";
+		};
+		F6730A3B286D557200628B36 /* Demo(Device) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6730A66286D557300628B36 /* Build configuration list for PBXNativeTarget "Demo(Device)" */;
 			buildPhases = (
 				F6730A38286D557200628B36 /* Sources */,
 				F6730A39286D557200628B36 /* Frameworks */,
@@ -145,9 +271,9 @@
 			);
 			dependencies = (
 			);
-			name = Demo;
+			name = "Demo(Device)";
 			productName = Teeee;
-			productReference = F6730A3C286D557200628B36 /* Demo.app */;
+			productReference = F6730A3C286D557200628B36 /* Demo(Device).app */;
 			productType = "com.apple.product-type.application";
 		};
 		F6730A51286D557300628B36 /* DemoTests */ = {
@@ -225,14 +351,36 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F6730A3B286D557200628B36 /* Demo */,
+				F6730A3B286D557200628B36 /* Demo(Device) */,
 				F6730A51286D557300628B36 /* DemoTests */,
 				F6730A5B286D557300628B36 /* DemoUITests */,
+				F608D5D328939B6800A64115 /* Demo(SimulatorARM) */,
+				F608D5E528939B7500A64115 /* Demo(SimulatorX86) */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F608D5DA28939B6800A64115 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F608D5DB28939B6800A64115 /* LaunchScreen.storyboard in Resources */,
+				F608D5DC28939B6800A64115 /* Assets.xcassets in Resources */,
+				F608D5DD28939B6800A64115 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F608D5EC28939B7500A64115 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F608D5ED28939B7500A64115 /* LaunchScreen.storyboard in Resources */,
+				F608D5EE28939B7500A64115 /* Assets.xcassets in Resources */,
+				F608D5EF28939B7500A64115 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F6730A3A286D557200628B36 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -324,6 +472,26 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F608D5D428939B6800A64115 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F608D5D528939B6800A64115 /* ViewController.swift in Sources */,
+				F608D5D628939B6800A64115 /* AppDelegate.swift in Sources */,
+				F608D5D728939B6800A64115 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F608D5E628939B7500A64115 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F608D5E728939B7500A64115 /* ViewController.swift in Sources */,
+				F608D5E828939B7500A64115 /* AppDelegate.swift in Sources */,
+				F608D5E928939B7500A64115 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F6730A38286D557200628B36 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -353,12 +521,12 @@
 /* Begin PBXTargetDependency section */
 		F6730A54286D557300628B36 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F6730A3B286D557200628B36 /* Demo */;
+			target = F6730A3B286D557200628B36 /* Demo(Device) */;
 			targetProxy = F6730A53286D557300628B36 /* PBXContainerItemProxy */;
 		};
 		F6730A5E286D557300628B36 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F6730A3B286D557200628B36 /* Demo */;
+			target = F6730A3B286D557200628B36 /* Demo(Device) */;
 			targetProxy = F6730A5D286D557300628B36 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -383,6 +551,162 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F608D5E128939B6800A64115 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 73WQ7ZGSWC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Teeee",
+					"$(PROJECT_DIR)/Teeee/SwiftKeychainWrapper",
+					"$(PROJECT_DIR)/Teeee/Simulator\\ arm",
+					"$(PROJECT_DIR)/Teeee/Simulator\\ arm",
+					"$(PROJECT_DIR)/Teeee/Simulator\\ arm",
+					"$(PROJECT_DIR)/Teeee/Simulator\\ arm",
+					"$(PROJECT_DIR)/Teeee/Simulator\\ arm",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Demo copy-Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iotx.data.Teeee;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F608D5E228939B6800A64115 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 73WQ7ZGSWC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Teeee",
+					"$(PROJECT_DIR)/Teeee/SwiftKeychainWrapper",
+					"$(PROJECT_DIR)/Teeee/Simulator\\ arm",
+					"$(PROJECT_DIR)/Teeee/Simulator\\ arm",
+					"$(PROJECT_DIR)/Teeee/Simulator\\ arm",
+					"$(PROJECT_DIR)/Teeee/Simulator\\ arm",
+					"$(PROJECT_DIR)/Teeee/Simulator\\ arm",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Demo copy-Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iotx.data.Teeee;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F608D5F328939B7500A64115 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 73WQ7ZGSWC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Teeee",
+					"$(PROJECT_DIR)/Teeee/SwiftKeychainWrapper",
+					"$(PROJECT_DIR)/Teeee/Simulator\\ x86",
+					"$(PROJECT_DIR)/Teeee/Simulator\\ x86",
+					"$(PROJECT_DIR)/Teeee/Simulator\\ x86",
+					"$(PROJECT_DIR)/Teeee/Simulator\\ x86",
+					"$(PROJECT_DIR)/Teeee/Simulator\\ x86",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DemoSimulator(ARM) copy-Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iotx.data.Teeee;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F608D5F428939B7500A64115 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 73WQ7ZGSWC;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Teeee",
+					"$(PROJECT_DIR)/Teeee/SwiftKeychainWrapper",
+					"$(PROJECT_DIR)/Teeee/Simulator\\ x86",
+					"$(PROJECT_DIR)/Teeee/Simulator\\ x86",
+					"$(PROJECT_DIR)/Teeee/Simulator\\ x86",
+					"$(PROJECT_DIR)/Teeee/Simulator\\ x86",
+					"$(PROJECT_DIR)/Teeee/Simulator\\ x86",
+				);
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DemoSimulator(ARM) copy-Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iotx.data.Teeee;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		F6730A64286D557300628B36 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -509,6 +833,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Teeee",
 					"$(PROJECT_DIR)/Teeee/SwiftKeychainWrapper",
+					"$(PROJECT_DIR)/Teeee/Device",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Teeee/Info.plist;
@@ -543,6 +868,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Teeee",
 					"$(PROJECT_DIR)/Teeee/SwiftKeychainWrapper",
+					"$(PROJECT_DIR)/Teeee/Device",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Teeee/Info.plist;
@@ -640,6 +966,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F608D5E028939B6800A64115 /* Build configuration list for PBXNativeTarget "Demo(SimulatorARM)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F608D5E128939B6800A64115 /* Debug */,
+				F608D5E228939B6800A64115 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F608D5F228939B7500A64115 /* Build configuration list for PBXNativeTarget "Demo(SimulatorX86)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F608D5F328939B7500A64115 /* Debug */,
+				F608D5F428939B7500A64115 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F6730A37286D557200628B36 /* Build configuration list for PBXProject "Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -649,7 +993,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F6730A66286D557300628B36 /* Build configuration list for PBXNativeTarget "Demo" */ = {
+		F6730A66286D557300628B36 /* Build configuration list for PBXNativeTarget "Demo(Device)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F6730A67286D557300628B36 /* Debug */,

@@ -1,7 +1,7 @@
 # w3bstream Framework For iOS
 
 ## Integration
-If running your project on the simulator, drag `build/Simulator/W3bStream.framework` into your project,  make sure select `Copy` option. If runnging on the device or submitting to Appstore, please use `build/ios/W3bStream.framework`.
+If running your project on the simulator(apple clip), drag `build/Simulator arm/W3bStream.framework` into your project,  make sure select `Copy` option. If runnging on the device or submitting to Appstore, please use `build/Device/W3bStream.framework`. If you encouter unexceptions of Privatekey when using `build/Simulator x86/W3bStream.framework`, please try the device.
 In `General` tab, open the _Frameworks,_ _Libraries, and Embedded Content_ section, change `Do Not Embed` to `Embed & Sign`
 
 More details  refer to [Embedding Frameworks In An App](https://developer.apple.com/library/archive/technotes/tn2435/_index.html)
@@ -20,6 +20,9 @@ let httpsurl = URL(string: "https://xxxxx")!
 let wsurl = URL(string: "wss://xxxxx")!
 w3bStream.config(httpsurl, websocketUrl: wsurl)
 w3bStream.interval = 5 //5 seconds
+//Cause the websocket costs time on connecting, we recommend to build the websocket initially 
+w3bStream.buildWebsocketConnect(wsurl!)
+
 ```
  The https url and websocket url are optional. But  one  must be set at least.
  If interval is greater than 0. The upload action will be repeated in specified seconds. The default is 0.

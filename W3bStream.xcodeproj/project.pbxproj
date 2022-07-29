@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F608D7432893B92D00A64115 /* WebSocketManager.swift in Headers */ = {isa = PBXBuildFile; fileRef = F6F510DF28925A4C008685CC /* WebSocketManager.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		F62694C82874135800149BBB /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62694B02874135800149BBB /* Random.swift */; };
 		F62694C92874135800149BBB /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62694B12874135800149BBB /* GCD.swift */; };
 		F62694CA2874135800149BBB /* Hashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62694B22874135800149BBB /* Hashable.swift */; };
@@ -608,6 +609,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6730992286C098300628B36 /* DataUpload.h in Headers */,
+				F608D7432893B92D00A64115 /* WebSocketManager.swift in Headers */,
 				F6730A05286D494800628B36 /* W3bStream.swift in Headers */,
 				F6F510DD289249C7008685CC /* SwiftKeychainWrapper.h in Headers */,
 				F6730ABC286E878100628B36 /* MFKeychainHelper.swift in Headers */,
@@ -1028,6 +1030,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Simulator\\ arm",
+					"$(PROJECT_DIR)/build/Device",
+					"$(PROJECT_DIR)/build/Simulator\\ x86",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1058,6 +1066,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Simulator\\ arm",
+					"$(PROJECT_DIR)/build/Device",
+					"$(PROJECT_DIR)/build/Simulator\\ x86",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";

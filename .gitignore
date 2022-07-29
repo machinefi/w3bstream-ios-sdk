@@ -8,3 +8,4 @@ DerivedData/
 ## Ignore when build
 .DS_Store
 .idea
+*.xcodeproj/xcuserdata/*
