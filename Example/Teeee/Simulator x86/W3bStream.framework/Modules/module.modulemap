@@ -1,4 +1,0 @@
-framework module W3bStream {
-  header "W3bStream-Swift.h"
-  requires objc
-}

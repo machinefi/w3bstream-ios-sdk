@@ -9,3 +9,5 @@ DerivedData/
 .DS_Store
 .idea
 *.xcodeproj/xcuserdata/*
+build/W3bStream.build
+build/XCBuildData

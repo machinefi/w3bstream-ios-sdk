@@ -26,7 +26,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 //        tf1.text = "https://w3w3bstream-example.onrender.com/api/data"
         tf1.text = nil
-        tf2.text = "wss://w3w3bstream-example.onrender.com/"
+        tf2.text = nil
         tf2.delegate = self
 
     }
