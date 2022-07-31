@@ -1,7 +1,10 @@
 # w3bstream Framework For iOS
 
+## Make the framework
+Run the makeframework.sh, the framworks will be generated in the build directory, which support ARM and x86 both. 
+
 ## Integration
-If running your project on the simulator(apple clip), drag `build/Release-iphonesimulator/W3bStream.framework` into your project,  make sure select `Copy` option. If runnging on the device or submitting to Appstore, please use `build/Release-iphoneos/W3bStream.framework`. If you encouter unexceptions of Privatekey when using `build/Release-iphonesimulator/W3bStream.framework`, please try the device.
+If running your project on the simulator, drag `build/Release-iphonesimulator/W3bStream.framework` into your project,  make sure select `Copy` option. If runnging on the device or submitting to Appstore, please use `build/Release-iphoneos/W3bStream.framework`. If you encouter unexceptions of Privatekey when using `build/Release-iphonesimulator/W3bStream.framework`, please try the device.
 In `General` tab, open the _Frameworks,_ _Libraries, and Embedded Content_ section, change `Do Not Embed` to `Embed & Sign`
 
 More details  refer to [Embedding Frameworks In An App](https://developer.apple.com/library/archive/technotes/tn2435/_index.html)
