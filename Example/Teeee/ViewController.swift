@@ -24,11 +24,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var w3bStream: W3bStream = W3bStream()
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tf1.text = "https://w3w3bstream-example.onrender.com/api/data"
         tf1.text = nil
         tf2.text = nil
         tf2.delegate = self
-
+        tf1.delegate = self
     }
     
 
@@ -41,10 +40,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        tf2.endEditing(true)
-        let wsurl = (tf2.text ?? "").isEmpty ? nil : URL(string: tf2.text!)!
-        if wsurl != nil {
-            w3bStream.buildWebsocketConnect(wsurl!)
+        tf1.endEditing(true)
+        if textField == tf2 {
+            tf2.endEditing(true)
+            let wsurl = (tf2.text ?? "").isEmpty ? nil : URL(string: tf2.text!)!
+            if wsurl != nil {
+                w3bStream.buildWebsocketConnect(wsurl!)
+            }
         }
         return true
     }

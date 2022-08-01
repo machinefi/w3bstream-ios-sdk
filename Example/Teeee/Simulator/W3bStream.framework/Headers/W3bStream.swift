@@ -14,6 +14,13 @@ public class W3bStream: NSObject {
     /// Create the device
     /// - Returns: IMEI and SN
     public static func create() -> (IMEI: String, SN: String)? {
+        
+        _ = try? MFKeychainHelper.makeAndStoreKey(name: MFKeychainHelper.PrivateKeyName)
+        guard MFKeychainHelper.loadKey(name: MFKeychainHelper.PrivateKeyName) != nil else {
+            print("private key failed")
+            return nil
+        }
+        
         func randomString(of length: Int) -> String {
             let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
             var s = ""

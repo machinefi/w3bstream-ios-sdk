@@ -26,7 +26,7 @@
 		</data>
 		<key>Headers/W3bStream.swift</key>
 		<data>
-		EFq9XbziQU3kA8GXR8m6uEQjAoM=
+		IuRucfBjILVM4MPfDlM+pCvMjxM=
 		</data>
 		<key>Headers/WebSocketManager.swift</key>
 		<data>
@@ -38,11 +38,11 @@
 		</data>
 		<key>Modules/W3bStream.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		t5L8b1Rk9geNl75hxS7vI5AktJ4=
+		KA9r5irQfAMcT1rjO8iuwtMKnVo=
 		</data>
 		<key>Modules/W3bStream.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		WY2bP7VouF0d/j3wKBOkQTUntZY=
+		CwK/LIyuaK3Svb5UKoo1MtwA0Vs=
 		</data>
 		<key>Modules/W3bStream.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/W3bStream.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		JtUblBQU9Raeo/jJXaKL75TlBAc=
+		vg9MHGwMWhqN3MhNJ4Fq+n4lnos=
 		</data>
 		<key>Modules/W3bStream.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Modules/W3bStream.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		za39Y2sewAdhCa04HxMgdEonA1I=
+		L01yQmpVqTUZDfSkZbT0X4gbkTg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -114,7 +114,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NFZjMmgoDi//Bv7a8VTk7QgLXq9h6XL+tz5vK/uyubM=
+			amcc/USzOjaGZKL9GtwHceiIZjry96C/n00P+gYL9p0=
 			</data>
 		</dict>
 		<key>Headers/WebSocketManager.swift</key>
@@ -128,14 +128,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zm463/+XCMHx5EPd6O1JjseHosRNClSN979DtK1AprA=
+			e5HA4VMH4NHtfhJSoJAfCtU8XLVH0yaufj+NwuZzdrQ=
 			</data>
 		</dict>
 		<key>Modules/W3bStream.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2UhYRbDFMge38TEy9LvxYsbDfy648fokmidjaDvLF7w=
+			cF94zklNR6oJpseOe6MHzwTEJCyka8v+Z9SaaPK4Njo=
 			</data>
 		</dict>
 		<key>Modules/W3bStream.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -156,7 +156,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aEUHhk609klBtRAI+rdNZ20G22v66poWrYgtcxS5790=
+			8ZTNmFgE1PODxe3bAHJgxVel/2DuNYZijjKnrlMX0SA=
 			</data>
 		</dict>
 		<key>Modules/W3bStream.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -177,7 +177,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XwBoeC/onwBLyYD5vg49dclZgQViJP/GcwknZHGUA90=
+			U5VHXIZZs9g0vFIBYhOgj+5Df2HE5l+V4e/q8J0fCJc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
