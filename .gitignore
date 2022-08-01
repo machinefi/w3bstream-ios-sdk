@@ -11,3 +11,5 @@ DerivedData/
 *.xcodeproj/xcuserdata/*
 build/W3bStream.build
 build/XCBuildData
+build
+out
