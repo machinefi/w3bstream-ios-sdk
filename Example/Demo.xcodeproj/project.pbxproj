@@ -21,8 +21,15 @@
 		F6730A47286D557200628B36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6730A45286D557200628B36 /* Main.storyboard */; };
 		F6730A49286D557300628B36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6730A48286D557300628B36 /* Assets.xcassets */; };
 		F6730A4C286D557300628B36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6730A4A286D557300628B36 /* LaunchScreen.storyboard */; };
-		F67571982897A56A009A2877 /* W3bStream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F67571962897A555009A2877 /* W3bStream.framework */; };
-		F67571992897A56A009A2877 /* W3bStream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F67571962897A555009A2877 /* W3bStream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F6CBB0AF289B648700B0330B /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB0AE289B648700B0330B /* SignViewController.swift */; };
+		F6CBB0B0289B648900B0330B /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB0AE289B648700B0330B /* SignViewController.swift */; };
+		F6CBB0B3289B844300B0330B /* Data+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB0B1289B844300B0330B /* Data+Ex.swift */; };
+		F6CBB0B4289B844300B0330B /* Data+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB0B1289B844300B0330B /* Data+Ex.swift */; };
+		F6CBB0B5289B844300B0330B /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB0B2289B844300B0330B /* String+Ex.swift */; };
+		F6CBB0B6289B844300B0330B /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB0B2289B844300B0330B /* String+Ex.swift */; };
+		F6CBB244289B8F8C00B0330B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6CBB242289B8F7200B0330B /* Security.framework */; };
+		F6CBB271289BAE1400B0330B /* W3bStream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6CBB26F289BADE900B0330B /* W3bStream.framework */; };
+		F6CBB272289BAE1400B0330B /* W3bStream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F6CBB26F289BADE900B0330B /* W3bStream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,17 +50,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F608D5DE28939B6800A64115 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				F67571992897A56A009A2877 /* W3bStream.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F6730A73286D55B600628B36 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -61,6 +57,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				F608D7422893ADD800A64115 /* W3bStream.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6CBB273289BAE1400B0330B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F6CBB272289BAE1400B0330B /* W3bStream.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,7 +89,11 @@
 		F6730A4D286D557300628B36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6730A52286D557300628B36 /* DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6730A5C286D557300628B36 /* DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F67571962897A555009A2877 /* W3bStream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = W3bStream.framework; sourceTree = "<group>"; };
+		F6CBB0AE289B648700B0330B /* SignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewController.swift; sourceTree = "<group>"; };
+		F6CBB0B1289B844300B0330B /* Data+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Data+Ex.swift"; path = "../../DataUpload/Ex/Data+Ex.swift"; sourceTree = "<group>"; };
+		F6CBB0B2289B844300B0330B /* String+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Ex.swift"; path = "../../DataUpload/Ex/String+Ex.swift"; sourceTree = "<group>"; };
+		F6CBB242289B8F7200B0330B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F6CBB26F289BADE900B0330B /* W3bStream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = W3bStream.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +101,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F67571982897A56A009A2877 /* W3bStream.framework in Frameworks */,
+				F6CBB244289B8F8C00B0330B /* Security.framework in Frameworks */,
+				F6CBB271289BAE1400B0330B /* W3bStream.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +134,7 @@
 		31FEC07A088FED8021AAA015 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F6CBB242289B8F7200B0330B /* Security.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,7 +142,7 @@
 		F608D73A2893ADC900A64115 /* Simulator */ = {
 			isa = PBXGroup;
 			children = (
-				F67571962897A555009A2877 /* W3bStream.framework */,
+				F6CBB26F289BADE900B0330B /* W3bStream.framework */,
 			);
 			path = Simulator;
 			sourceTree = "<group>";
@@ -167,11 +180,14 @@
 		F6730A3E286D557200628B36 /* Teeee */ = {
 			isa = PBXGroup;
 			children = (
+				F6CBB0B1289B844300B0330B /* Data+Ex.swift */,
+				F6CBB0B2289B844300B0330B /* String+Ex.swift */,
 				F608D73C2893ADC900A64115 /* Device */,
 				F608D73A2893ADC900A64115 /* Simulator */,
 				F6730A3F286D557200628B36 /* AppDelegate.swift */,
 				F6730A41286D557200628B36 /* SceneDelegate.swift */,
 				F6730A43286D557200628B36 /* ViewController.swift */,
+				F6CBB0AE289B648700B0330B /* SignViewController.swift */,
 				F6730A45286D557200628B36 /* Main.storyboard */,
 				F6730A48286D557300628B36 /* Assets.xcassets */,
 				F6730A4A286D557300628B36 /* LaunchScreen.storyboard */,
@@ -190,7 +206,7 @@
 				F608D5D428939B6800A64115 /* Sources */,
 				F608D5D828939B6800A64115 /* Frameworks */,
 				F608D5DA28939B6800A64115 /* Resources */,
-				F608D5DE28939B6800A64115 /* Embed Frameworks */,
+				F6CBB273289BAE1400B0330B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -408,9 +424,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6CBB0B6289B844300B0330B /* String+Ex.swift in Sources */,
+				F6CBB0B0289B648900B0330B /* SignViewController.swift in Sources */,
 				F608D5D528939B6800A64115 /* ViewController.swift in Sources */,
 				F608D5D628939B6800A64115 /* AppDelegate.swift in Sources */,
 				F608D5D728939B6800A64115 /* SceneDelegate.swift in Sources */,
+				F6CBB0B4289B844300B0330B /* Data+Ex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,9 +437,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6CBB0B5289B844300B0330B /* String+Ex.swift in Sources */,
+				F6CBB0AF289B648700B0330B /* SignViewController.swift in Sources */,
 				F6730A44286D557200628B36 /* ViewController.swift in Sources */,
 				F6730A40286D557200628B36 /* AppDelegate.swift in Sources */,
 				F6730A42286D557200628B36 /* SceneDelegate.swift in Sources */,
+				F6CBB0B3289B844300B0330B /* Data+Ex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

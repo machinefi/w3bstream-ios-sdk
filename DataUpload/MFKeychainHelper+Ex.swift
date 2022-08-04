@@ -47,6 +47,13 @@ extension MFKeychainHelper {
     public static func compressedPubKey(_ publicKey: String) -> String {
         return "0x" + publicKey.subString(start: 2)
     }
+
+    public static func getCurrentPubKey()->String? {
+        guard let prikey = MFKeychainHelper.loadKey(name: MFKeychainHelper.PrivateKeyName) else {
+            return nil
+        }
+        return MFKeychainHelper.getPubKey(prikey)
+    }
     
 }
 

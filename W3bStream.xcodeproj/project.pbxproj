@@ -30,6 +30,7 @@
 		F62694DB2874135800149BBB /* Integer Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62694C32874135800149BBB /* Integer Conversion.swift */; };
 		F62694DC2874135800149BBB /* BigInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62694C42874135800149BBB /* BigInt.swift */; };
 		F62694DD2874135800149BBB /* String Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62694C52874135800149BBB /* String Conversion.swift */; };
+		F66BAC2F289A79C3003B478F /* W3bStream+VerifyDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66BAC2E289A79C3003B478F /* W3bStream+VerifyDevice.swift */; };
 		F673098C286C098300628B36 /* W3bStream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6730981286C098300628B36 /* W3bStream.framework */; };
 		F6730991286C098300628B36 /* DataUploadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6730990286C098300628B36 /* DataUploadTests.swift */; };
 		F6730992286C098300628B36 /* DataUpload.h in Headers */ = {isa = PBXBuildFile; fileRef = F6730984286C098300628B36 /* DataUpload.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -142,6 +143,17 @@
 		F6730C11286EDAE800628B36 /* OFB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6730BC2286EDAE800628B36 /* OFB.swift */; };
 		F6730C12286EDAE800628B36 /* ChaCha20.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6730BC3286EDAE800628B36 /* ChaCha20.swift */; };
 		F6730C13286EDAE800628B36 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6730BC4286EDAE800628B36 /* Array+Extension.swift */; };
+		F6CBB264289BAD7600B0330B /* PrivateKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB25B289BAD7600B0330B /* PrivateKey.swift */; };
+		F6CBB265289BAD7600B0330B /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB25C289BAD7600B0330B /* Key.swift */; };
+		F6CBB266289BAD7600B0330B /* PublicKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB25D289BAD7600B0330B /* PublicKey.swift */; };
+		F6CBB267289BAD7600B0330B /* SwiftRSA.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB25E289BAD7600B0330B /* SwiftRSA.swift */; };
+		F6CBB268289BAD7600B0330B /* SwiftRSAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB25F289BAD7600B0330B /* SwiftRSAError.swift */; };
+		F6CBB269289BAD7600B0330B /* ClearText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB260289BAD7600B0330B /* ClearText.swift */; };
+		F6CBB26A289BAD7600B0330B /* SwiftyRSAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB261289BAD7600B0330B /* SwiftyRSAError.swift */; };
+		F6CBB26B289BAD7600B0330B /* Signature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB262289BAD7600B0330B /* Signature.swift */; };
+		F6CBB26C289BAD7600B0330B /* EncryptedText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB263289BAD7600B0330B /* EncryptedText.swift */; };
+		F6CBB26D289BADBB00B0330B /* PrivateKey.swift in Headers */ = {isa = PBXBuildFile; fileRef = F6CBB25B289BAD7600B0330B /* PrivateKey.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		F6CBB26E289BADBD00B0330B /* PublicKey.swift in Headers */ = {isa = PBXBuildFile; fileRef = F6CBB25D289BAD7600B0330B /* PublicKey.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		F6F510D5289243A6008685CC /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F510D4289243A6008685CC /* Config.swift */; };
 		F6F510DB289249C7008685CC /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F510D7289249C7008685CC /* KeychainWrapper.swift */; };
 		F6F510DC289249C7008685CC /* KeychainWrapperSubscript.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F510D8289249C7008685CC /* KeychainWrapperSubscript.swift */; };
@@ -187,6 +199,7 @@
 		F62694C32874135800149BBB /* Integer Conversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Integer Conversion.swift"; sourceTree = "<group>"; };
 		F62694C42874135800149BBB /* BigInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigInt.swift; sourceTree = "<group>"; };
 		F62694C52874135800149BBB /* String Conversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String Conversion.swift"; sourceTree = "<group>"; };
+		F66BAC2E289A79C3003B478F /* W3bStream+VerifyDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "W3bStream+VerifyDevice.swift"; sourceTree = "<group>"; };
 		F6730981286C098300628B36 /* W3bStream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = W3bStream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6730984286C098300628B36 /* DataUpload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataUpload.h; sourceTree = "<group>"; };
 		F673098B286C098300628B36 /* W3bStreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = W3bStreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -283,6 +296,15 @@
 		F6730BC2286EDAE800628B36 /* OFB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OFB.swift; sourceTree = "<group>"; };
 		F6730BC3286EDAE800628B36 /* ChaCha20.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChaCha20.swift; sourceTree = "<group>"; };
 		F6730BC4286EDAE800628B36 /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		F6CBB25B289BAD7600B0330B /* PrivateKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivateKey.swift; sourceTree = "<group>"; };
+		F6CBB25C289BAD7600B0330B /* Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		F6CBB25D289BAD7600B0330B /* PublicKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicKey.swift; sourceTree = "<group>"; };
+		F6CBB25E289BAD7600B0330B /* SwiftRSA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRSA.swift; sourceTree = "<group>"; };
+		F6CBB25F289BAD7600B0330B /* SwiftRSAError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRSAError.swift; sourceTree = "<group>"; };
+		F6CBB260289BAD7600B0330B /* ClearText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearText.swift; sourceTree = "<group>"; };
+		F6CBB261289BAD7600B0330B /* SwiftyRSAError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyRSAError.swift; sourceTree = "<group>"; };
+		F6CBB262289BAD7600B0330B /* Signature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Signature.swift; sourceTree = "<group>"; };
+		F6CBB263289BAD7600B0330B /* EncryptedText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncryptedText.swift; sourceTree = "<group>"; };
 		F6F510D4289243A6008685CC /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		F6F510D7289249C7008685CC /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		F6F510D8289249C7008685CC /* KeychainWrapperSubscript.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapperSubscript.swift; sourceTree = "<group>"; };
@@ -380,6 +402,7 @@
 		F6730983286C098300628B36 /* DataUpload */ = {
 			isa = PBXGroup;
 			children = (
+				F6CBB246289BA66C00B0330B /* RSA */,
 				F6F510E528925A68008685CC /* Starscream */,
 				F6F510D6289249C7008685CC /* SwiftKeychainWrapper */,
 				F62694AC2874135800149BBB /* BigInt */,
@@ -392,6 +415,7 @@
 				F6730A03286D37AB00628B36 /* W3bStream.swift */,
 				F6F510D4289243A6008685CC /* Config.swift */,
 				F6730A10286D4C2600628B36 /* W3bStream+Upload.swift */,
+				F66BAC2E289A79C3003B478F /* W3bStream+VerifyDevice.swift */,
 				F6730984286C098300628B36 /* DataUpload.h */,
 			);
 			path = DataUpload;
@@ -578,6 +602,22 @@
 			path = BlockMode;
 			sourceTree = "<group>";
 		};
+		F6CBB246289BA66C00B0330B /* RSA */ = {
+			isa = PBXGroup;
+			children = (
+				F6CBB260289BAD7600B0330B /* ClearText.swift */,
+				F6CBB263289BAD7600B0330B /* EncryptedText.swift */,
+				F6CBB25C289BAD7600B0330B /* Key.swift */,
+				F6CBB25B289BAD7600B0330B /* PrivateKey.swift */,
+				F6CBB25D289BAD7600B0330B /* PublicKey.swift */,
+				F6CBB262289BAD7600B0330B /* Signature.swift */,
+				F6CBB25E289BAD7600B0330B /* SwiftRSA.swift */,
+				F6CBB25F289BAD7600B0330B /* SwiftRSAError.swift */,
+				F6CBB261289BAD7600B0330B /* SwiftyRSAError.swift */,
+			);
+			path = RSA;
+			sourceTree = "<group>";
+		};
 		F6F510D6289249C7008685CC /* SwiftKeychainWrapper */ = {
 			isa = PBXGroup;
 			children = (
@@ -613,6 +653,8 @@
 				F6730A05286D494800628B36 /* W3bStream.swift in Headers */,
 				F6F510DD289249C7008685CC /* SwiftKeychainWrapper.h in Headers */,
 				F6730ABC286E878100628B36 /* MFKeychainHelper.swift in Headers */,
+				F6CBB26E289BADBD00B0330B /* PublicKey.swift in Headers */,
+				F6CBB26D289BADBB00B0330B /* PrivateKey.swift in Headers */,
 				F6730ABD286E878300628B36 /* MFKeychainHelper+Ex.swift in Headers */,
 				F6730A12286D4C3200628B36 /* W3bStream+Upload.swift in Headers */,
 			);
@@ -744,6 +786,7 @@
 			files = (
 				F6730BDC286EDAE800628B36 /* Scrypt.swift in Sources */,
 				F62694DB2874135800149BBB /* Integer Conversion.swift in Sources */,
+				F6CBB269289BAD7600B0330B /* ClearText.swift in Sources */,
 				F62694CA2874135800149BBB /* Hashable.swift in Sources */,
 				F6730C08286EDAE800628B36 /* CFB.swift in Sources */,
 				F6730BC8286EDAE800628B36 /* StreamDecryptor.swift in Sources */,
@@ -774,8 +817,12 @@
 				F6730BCB286EDAE800628B36 /* Cryptors.swift in Sources */,
 				F6730C10286EDAE800628B36 /* CTR.swift in Sources */,
 				F67309F7286D348D00628B36 /* ABIDecoding.swift in Sources */,
+				F6CBB268289BAD7600B0330B /* SwiftRSAError.swift in Sources */,
 				F6730BCF286EDAE800628B36 /* AEADChaCha20Poly1305.swift in Sources */,
 				F6730C12286EDAE800628B36 /* ChaCha20.swift in Sources */,
+				F6CBB26C289BAD7600B0330B /* EncryptedText.swift in Sources */,
+				F6CBB26B289BAD7600B0330B /* Signature.swift in Sources */,
+				F6CBB264289BAD7600B0330B /* PrivateKey.swift in Sources */,
 				F62694CD2874135800149BBB /* Data Conversion.swift in Sources */,
 				F6730BC9286EDAE800628B36 /* BlockEncryptor.swift in Sources */,
 				F6730BCC286EDAE800628B36 /* HKDF.swift in Sources */,
@@ -791,6 +838,7 @@
 				F62694DA2874135800149BBB /* Subtraction.swift in Sources */,
 				F6730C01286EDAE800628B36 /* PKCS7Padding.swift in Sources */,
 				F6730BF9286EDAE800628B36 /* BlockDecryptor.swift in Sources */,
+				F6CBB266289BAD7600B0330B /* PublicKey.swift in Sources */,
 				F6730BDA286EDAE800628B36 /* Digest.swift in Sources */,
 				F6730A01286D36A600628B36 /* BigInt+Extension.swift in Sources */,
 				F6730C0B286EDAE800628B36 /* CCM.swift in Sources */,
@@ -806,6 +854,7 @@
 				F6730BF4286EDAE800628B36 /* SHA1.swift in Sources */,
 				F62694CE2874135800149BBB /* Bitwise Ops.swift in Sources */,
 				F62694D32874135800149BBB /* Prime Test.swift in Sources */,
+				F6CBB26A289BAD7600B0330B /* SwiftyRSAError.swift in Sources */,
 				F6730BDE286EDAE800628B36 /* String+FoundationExtension.swift in Sources */,
 				F6730BF7286EDAE800628B36 /* Updatable.swift in Sources */,
 				F6F510DB289249C7008685CC /* KeychainWrapper.swift in Sources */,
@@ -832,6 +881,7 @@
 				F6730A04286D37AB00628B36 /* W3bStream.swift in Sources */,
 				F62694CB2874135800149BBB /* Strideable.swift in Sources */,
 				F6730BE6286EDAE800628B36 /* Rabbit+Foundation.swift in Sources */,
+				F6CBB267289BAD7600B0330B /* SwiftRSA.swift in Sources */,
 				F6730BD4286EDAE800628B36 /* Bit.swift in Sources */,
 				F67309A1286C0D1100628B36 /* Data+Ex.swift in Sources */,
 				F6730BFC286EDAE800628B36 /* Utils.swift in Sources */,
@@ -860,11 +910,13 @@
 				F6730BFE286EDAE800628B36 /* Checksum.swift in Sources */,
 				F6F510D5289243A6008685CC /* Config.swift in Sources */,
 				F6730C13286EDAE800628B36 /* Array+Extension.swift in Sources */,
+				F6CBB265289BAD7600B0330B /* Key.swift in Sources */,
 				F62694D52874135800149BBB /* BigUInt.swift in Sources */,
 				F6730BE9286EDAE800628B36 /* Cryptor.swift in Sources */,
 				F6730BEF286EDAE800628B36 /* String+Extension.swift in Sources */,
 				F6730BEB286EDAE800628B36 /* BatchedCollection.swift in Sources */,
 				F6730C05286EDAE800628B36 /* PBKDF1.swift in Sources */,
+				F66BAC2F289A79C3003B478F /* W3bStream+VerifyDevice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

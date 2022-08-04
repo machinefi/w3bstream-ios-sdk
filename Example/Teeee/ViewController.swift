@@ -17,6 +17,8 @@ extension Dictionary {
 }
 
 class ViewController: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var imeitf: UITextField!
+    @IBOutlet weak var sntf: UITextField!
     @IBOutlet weak var deviceLabel: UILabel!
     @IBOutlet weak var intervaltf: UITextField!
     @IBOutlet weak var tf1: UITextField!
@@ -24,19 +26,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var w3bStream: W3bStream = W3bStream()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        _ = W3bStream.create()
+        
         tf1.text = nil
         tf2.text = nil
         tf2.delegate = self
         tf1.delegate = self
-    }
-    
-
-    @IBAction func createdevice(_ sender: Any) {
-        //create the device
-        let device = W3bStream.create()!
-        deviceLabel.text = "device imei=\(device.IMEI) sn=\(device.SN)"
-        w3bStream.interval = Int(intervaltf.text ?? "") ?? 0
-
     }
     
     @objc func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -77,5 +73,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 print("websocket res \(dic)")
             }
         }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
 }
 
