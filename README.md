@@ -12,11 +12,15 @@ More details  refer to [Embedding Frameworks In An App](https://developer.apple.
 
 ### Create Device
 
+Create the private key (stored in the keychain)
 ```
-  let device = W3bStream.create()!
-  let imei = device.IMEI
-  let sn= device.SN
+  let isOk = W3bStream.create()
 ```
+
+### Sign request
+sign API demonstrates how to verify the unique device
+check the detail in the demo
+
 ### Config  
 ```
 let httpsurl = URL(string: "https://xxxxx")!
