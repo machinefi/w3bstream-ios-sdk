@@ -9,10 +9,6 @@ public extension W3bStream {
     /// - Returns: description
     static func makePayload(info: String) -> [String: Any]? {
 
-        guard let IMEI = KeychainWrapper.standard.string(forKey: imei_key) else {
-            print("IMEI is forced need")
-            return nil
-        }
         guard let jsonData = info.data(using: .utf8) else {
             return nil
         }
@@ -32,7 +28,6 @@ public extension W3bStream {
 
         
         return ["data": info,
-                "imei": IMEI,
                 "pubKey": "\(compressPubKey)",
                 "signature": "\(signature.toHexString().addHexPrefix())"
                ]
@@ -96,11 +91,11 @@ public extension W3bStream {
     ///   - info:
     ///   - httpsCompletionHandler:
     ///   - websocketCompletionHandler: 
-    func upload(info: String, httpsCompletionHandler: ((Data?, Error?) -> Void)?, websocketCompletionHandler: ((Data) -> Void)?) {
+    func upload(httpsCompletionHandler: ((Data?, Error?) -> Void)?, websocketCompletionHandler: ((Data) -> Void)?) {
         if timer == nil {
             timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(interval), repeats: interval > 0) { _ in
                 if Config.shared.httpsUrl != nil {
-                    guard let payload = W3bStream.makePayload(info: info) else {
+                    guard let payload = W3bStream.makePayload(info: self.data) else {
                         return
                     }
                     self.uploadViaHttps(url: Config.shared.httpsUrl!, payload: payload) { data, res, err in
@@ -111,7 +106,7 @@ public extension W3bStream {
                     if self.w3bWebsocketDidReceiveData == nil {
                         self.w3bWebsocketDidReceiveData = websocketCompletionHandler
                     }
-                    guard let payload = W3bStream.makeWebsocketPayload(info) else {
+                    guard let payload = W3bStream.makeWebsocketPayload(self.data) else {
                         return
                     }
                     self.uploadViaWebsocket(payload: payload)

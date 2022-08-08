@@ -6,7 +6,8 @@ public class W3bStream: NSObject {
     var w3bWebsocketDidReceiveData: ((Data)->Void)?
     public var interval = 0 //seconds
     public var timer: Timer?
-    
+    public var data: String = "" //the data string
+
     public override init(){
         super.init()
     }
