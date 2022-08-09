@@ -1,0 +1,17 @@
+# Uncomment the next line to define a global platform for your project
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '12.0'
+use_frameworks!
+abstract_target 'App' do
+  pod 'RealmSwift'
+  pod 'Toast-Swift', '~> 5.0.1'
+  pod 'SwiftLocation/Core'
+  pod 'SnapKit', '~> 5.0.0'
+
+  target 'Demo(Device)' do
+  end
+
+  target 'Demo(Simulator)' do
+  end
+end

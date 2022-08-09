@@ -1,5 +1,9 @@
 import UIKit
 import W3bStream
+import Toast_Swift
+import SnapKit
+import SwiftLocation
+import CoreLocation
 
 extension Dictionary {
     
@@ -12,70 +16,171 @@ extension Dictionary {
             return nil
         }
         return str
-     }
+    }
     
 }
 
 class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var imeitf: UITextField!
-    @IBOutlet weak var sntf: UITextField!
-    @IBOutlet weak var deviceLabel: UILabel!
     @IBOutlet weak var intervaltf: UITextField!
     @IBOutlet weak var tf1: UITextField!
-    @IBOutlet weak var tf2: UITextField!
+    @IBOutlet weak var uploadBtn: UIButton!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var dataLabel: UILabel!
+    @IBOutlet weak var tipLabel: UILabel!
+
+    var hisvc = HistoryViewController()
+    
     var w3bStream: W3bStream = W3bStream()
+    var shakeCounter = 0
+    var coordinate: CLLocationCoordinate2D?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let IMEI = "100" + String("\(Int(arc4random_uniform(899999) + 100000))") + String("\(Int(arc4random_uniform(899999) + 100000))")
+        imeitf.text = IMEI
+        intervaltf.text = "10"
+        tf1.text = "https://w3bstream-shake-demo.onrender.com/api/data"
+        tf1.delegate = self
+        addChild(hisvc)
+        containerView.addSubview(hisvc.view)
+        hisvc.view.snp.makeConstraints { make in
+            make.edges.equalTo(containerView)
+        }
+        
+        SwiftLocation.gpsLocation().then {
+            print("gpsLocation requested \(Date().description)")
+            self.coordinate = $0.location?.coordinate
+            self.makeNewData()
+        }
         
         _ = W3bStream.create()
-        
-        tf1.text = nil
-        tf2.text = nil
-        tf2.delegate = self
-        tf1.delegate = self
     }
     
     @objc func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         tf1.endEditing(true)
-        if textField == tf2 {
-            tf2.endEditing(true)
-            let wsurl = (tf2.text ?? "").isEmpty ? nil : URL(string: tf2.text!)!
-            if wsurl != nil {
-                w3bStream.buildWebsocketConnect(wsurl!)
+        if textField == tf1 {
+            if tf1.text?.isEmpty == false, let url = URL(string: tf1.text!) {
+                if url.scheme?.lowercased() == "https" {
+                    w3bStream.config(url)
+                }else if url.scheme?.lowercased() == "wss" {
+                    w3bStream.buildWebsocketConnect(url)
+                }
             }
+            
         }
         return true
     }
- 
+    
     @IBAction func upload(_ sender: Any) {
-        let httpsurl = (tf1.text ?? "").isEmpty ? nil : URL(string: tf1.text!)!
-        w3bStream.config(httpsurl)
-            //prepare the data
-            let random = "\(Int.random(in: 10000..<99999))"
-            let timestamp = Int32(round(Date().timeIntervalSince1970))
-            let latitudeInt = 295661300
-            let longitudeInt = 1064685700
-            let jsonString = "{\"latitude\":\"\(latitudeInt)\",\"longitude\":\"\(longitudeInt)\",\"random\":\"\(random)\",\"snr\": 1024,\"timestamp\":\(timestamp)}"
-            
-
-            self.w3bStream.upload(info: jsonString) { data, err in
-                
-                                guard let data = data else {
-                                    return
-                                }
-                                let json = try! JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-                                let dic = json as! Dictionary<String, Any>
-                                print("https res \(dic)")
-                
-            } websocketCompletionHandler: { data in
-                let json = try! JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-                let dic = json as! Dictionary<String, Any>
-                print("websocket res \(dic)")
+        
+        if uploadBtn.isSelected {
+            self.w3bStream.stop()
+            uploadBtn.isSelected = false
+            self.view.makeToast("upload stopped")
+            return
+        }
+        
+        guard imeitf.text?.isEmpty == false else {
+            self.view.makeToast("IMEI cannot be empty")
+            return
+        }
+        
+        guard tf1.text?.isEmpty == false else {
+            self.view.makeToast("https/websocket cannot be empty")
+            return
+        }
+        
+        if tf1.text?.isEmpty == false, let url = URL(string: tf1.text!) {
+            if url.scheme?.lowercased() == "https" {
+                w3bStream.config(url)
+            }else if url.scheme?.lowercased() == "wss" {
+                //import, the websocket needs to be built
+                w3bStream.buildWebsocketConnect(url)
             }
         }
+        
+        uploadBtn.isSelected = true
+        
+        makeNewData()
+        let latitude = coordinate?.latitude ?? 0
+        let longitude = coordinate?.longitude ?? 0
+        self.w3bStream.interval = (intervaltf.text?.isEmpty ?? true) ? 0 : Int(intervaltf.text!)!
+        self.w3bStream.upload { data, err in
+            
+            DispatchQueue.main.async {
+
+                DataModel(shakeCount: self.shakeCounter, timestamp: Date().timeIntervalSince1970, latitude: "\(latitude)", longitude: "\(longitude)").add()
+                self.hisvc.reloadData()
+                guard let data = data else {
+                    return
+                }
+                if let json = try? JSONSerialization.jsonObject(with: data, options: []) {
+                    let dic = json as! Dictionary<String, Any>
+                    print("https res \(dic)")
+                    DispatchQueue.main.async {
+                        self.view.makeToast("Upload success")
+                    }
+                }else {
+                    DispatchQueue.main.async {
+                        self.view.makeToast("Upload success")
+                    }
+                }
+                
+            }
+                        
+        } websocketCompletionHandler: { data in
+            DispatchQueue.main.async {
+
+
+                DataModel(shakeCount: self.shakeCounter, timestamp: Date().timeIntervalSince1970, latitude: "\(latitude)", longitude: "\(longitude)").add()
+                self.hisvc.reloadData()
+                if let json = try? JSONSerialization.jsonObject(with: data, options: []) {
+                    let dic = json as! Dictionary<String, Any>
+                    print("https res \(dic)")
+                    DispatchQueue.main.async {
+                        self.view.makeToast("Upload success")
+                    }
+                }else {
+                    DispatchQueue.main.async {
+                        self.view.makeToast("Upload success")
+                    }
+                }
+                
+            }
+        }
+        self.shakeCounter = 0
+        
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+    }
+    
+    override func becomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            shakeCounter += 1
+            print("Shaken \(shakeCounter) times")
+            makeNewData()
+        }
+    }
+    
+    
+    @IBAction func his(_ sender: Any) {
+        self.navigationController?.pushViewController(HistoryViewController(), animated: true)
+    }
+    
+    func makeNewData() {
+        let timestamp = Int32(round(Date().timeIntervalSince1970))
+        let latitude = coordinate?.latitude ?? 0
+        let longitude = coordinate?.longitude ?? 0
+        let jsonString = "{\"latitude\":\"\(latitude)\",\"longitude\":\"\(longitude)\",\"shakeCount\": \(shakeCounter),\"timestamp\":\(timestamp), \"imei\":\"\(imeitf.text!)\"}"
+        self.w3bStream.data = jsonString
+        dataLabel.text = "latitude: \(latitude), longitude: \(longitude), shakeCount: \(shakeCounter)"
     }
 }
 

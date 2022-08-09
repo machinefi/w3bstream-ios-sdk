@@ -18,7 +18,7 @@ class SignViewController: UIViewController {
 
         if let vc = navigationController?.viewControllers.first as? ViewController {
             imei = vc.imeitf.text ?? ""
-            sn =  vc.sntf.text ?? ""
+            sn = "afzxxvq3124"  //random string
             imeiLabel.text = "IMEI: " + imei
             snLabel.text = "SN: " +  sn
             pubKey = MFKeychainHelper.compressedPubKey(MFKeychainHelper.getCurrentPubKey() ?? "")
