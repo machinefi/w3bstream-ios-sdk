@@ -1,7 +1,7 @@
 # w3bstream Framework For iOS
 
 ## Make the framework
-Run the makeframework.sh, the framworks will be generated in the build directory, which support ARM and x86 both. 
+Run the makeframework.sh, the framworks will be generated in the build directory, which support ARM and x86 both.
 
 ## Integration
 If running your project on the simulator, drag `build/Release-iphonesimulator/W3bStream.framework` into your project,  make sure select `Copy` option. If runnging on the device or submitting to Appstore, please use `build/Release-iphoneos/W3bStream.framework`. If you encouter unexceptions of Privatekey when using `build/Release-iphonesimulator/W3bStream.framework`, please try the device.
@@ -19,7 +19,7 @@ Create the private key (stored in the keychain)
 
 ### Sign request
 sign API demonstrates how to verify the unique device
-check the detail in the demo
+check the usage in the Demo
 
 ### Config  
 ```
@@ -36,11 +36,7 @@ w3bStream.buildWebsocketConnect(wsurl!)
 ### Upload Data
 ```
 //prepare the data
-let random = 51652
-let timestamp = 1658998925
-let latitudeInt = 295661300
-let longitudeInt = 1064685700
-let jsonString = "{\"latitude\":\"\(latitudeInt)\",\"longitude\":\"\(longitudeInt)\",\"random\":\"\(random)\",\"snr\": 1024,\"timestamp\":\(timestamp)}"
+let jsonString = "{\"latitude\":\"36.652061\",\"longitude\":\"117.120144\",\"shakeCount\": 4,\"timestamp\":1660027882, \"imei\":\"100558946403437\"}"
 //update the data 
 w3bStream.data = jsonString
 //upload
@@ -68,4 +64,5 @@ websocket upload method
 uploadViaWebsocket(payload: payload)
 ```
 
-
+## Run the demo
+run `makeframework.sh` first, then `pod install` in the Example, open the Demo.xcworkspace
