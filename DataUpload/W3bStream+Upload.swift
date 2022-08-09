@@ -90,9 +90,9 @@ public extension W3bStream {
     /// - Parameters:
     ///   - httpsCompletionHandler:
     ///   - websocketCompletionHandler: 
-    func upload(completionHandler: ((Data?, Error?) -> Void)?) {
+    func upload(data: String, completionHandler: ((Data?, Error?) -> Void)?) {
         if Config.shared.httpsUrls.count > 0 {
-                guard let payload = W3bStream.makePayload(info: self.data) else {
+                guard let payload = W3bStream.makePayload(info: data) else {
                     return
                 }
                 Config.shared.httpsUrls.forEach { url in
@@ -106,7 +106,7 @@ public extension W3bStream {
             if self.w3bWebsocketDidReceiveData == nil {
                     self.w3bWebsocketDidReceiveData = completionHandler
             }
-            guard let payload = W3bStream.makeWebsocketPayload(self.data) else {
+            guard let payload = W3bStream.makeWebsocketPayload(data) else {
                 return
             }
             

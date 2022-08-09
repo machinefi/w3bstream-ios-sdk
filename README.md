@@ -26,10 +26,8 @@ Create the instance
 ```
 //prepare the data
 let jsonString = "{\"latitude\":\"36.652061\",\"longitude\":\"117.120144\",\"shakeCount\": 4,\"timestamp\":1660027882, \"imei\":\"100558946403437\"}"
-//update the data 
-w3bStream.data = jsonString
 //upload
-w3bStream.upload { data, err in
+w3bStream.upload(data: jsonString) { data, err in
 } 
 ```
 

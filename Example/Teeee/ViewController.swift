@@ -34,6 +34,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var w3bStream: W3bStream?
     var shakeCounter = 0
     var coordinate: CLLocationCoordinate2D?
+    var jsonstring = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,7 +92,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         if timer == nil {
             timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(interval), repeats: interval > 0) { _ in
-                self.w3bStream!.upload { data, err in
+                self.w3bStream!.upload(data: self.jsonstring) { data, err in
                     
                     DispatchQueue.main.async {
                         DataModel(shakeCount: self.shakeCounter, timestamp: Date().timeIntervalSince1970, latitude: "\(latitude)", longitude: "\(longitude)").add()
@@ -142,14 +143,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.navigationController?.pushViewController(HistoryViewController(), animated: true)
     }
     
-    func makeNewData() {
+    func makeNewData(){
         let timestamp = Int32(round(Date().timeIntervalSince1970))
         let latitude = coordinate?.latitude ?? 0
         let longitude = coordinate?.longitude ?? 0
-        let jsonString = "{\"latitude\":\"\(latitude)\",\"longitude\":\"\(longitude)\",\"shakeCount\": \(shakeCounter),\"timestamp\":\(timestamp), \"imei\":\"\(imeitf.text!)\"}"
-        if self.w3bStream != nil {
-            self.w3bStream!.data = jsonString
-        }
+        jsonstring = "{\"latitude\":\"\(latitude)\",\"longitude\":\"\(longitude)\",\"shakeCount\": \(shakeCounter),\"timestamp\":\(timestamp), \"imei\":\"\(imeitf.text!)\"}"
         dataLabel.text = "latitude: \(latitude), longitude: \(longitude), shakeCount: \(shakeCounter)"
     }
 }

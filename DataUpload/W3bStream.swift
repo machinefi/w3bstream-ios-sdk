@@ -3,9 +3,7 @@ import Foundation
 import UIKit
 
 public class W3bStream: NSObject {
-    var w3bWebsocketDidReceiveData: ((Data?, Error?)->Void)?
-    public var data: String = "" //the data string
-    
+    var w3bWebsocketDidReceiveData: ((Data?, Error?)->Void)?    
     
     /// init the instance
     /// - Parameter urls: https or wss url
