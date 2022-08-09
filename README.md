@@ -10,29 +10,18 @@ In `General` tab, open the _Frameworks,_ _Libraries, and Embedded Content_ secti
 More details  refer to [Embedding Frameworks In An App](https://developer.apple.com/library/archive/technotes/tn2435/_index.html)
 ## Usage
 
-### Create Device
+### Init the instance
 
-Create the private key (stored in the keychain)
+Create the instance
 ```
-  let isOk = W3bStream.create()
+   let httpsurl1 = URL(string: "https://xxxxx")!
+   let httpsurl2 = URL(string: "https://xxxxx")!
+   let httpsurl3 = URL(string: "https://xxxxx")!
+   let wsurl = URL(string: "wss://xxxxx")!
+   let urls = [httpsurl1, httpsurl2, httpsurl3, wsurl]
+   let w3bStream = W3bStream(urls: urls)
 ```
 
-### Sign request
-sign API demonstrates how to verify the unique device
-check the usage in the Demo
-
-### Config  
-```
-let httpsurl = URL(string: "https://xxxxx")!
-let wsurl = URL(string: "wss://xxxxx")!
-w3bStream.config(httpsurl, websocketUrl: wsurl)
-w3bStream.interval = 5 //5 seconds
-//Cause the websocket costs time on connecting, we recommend to build the websocket initially 
-w3bStream.buildWebsocketConnect(wsurl!)
-
-```
- The https url and websocket url are optional. But  one  must be set at least.
- If interval is greater than 0. The upload action will be repeated in specified seconds. The default is 0.
 ### Upload Data
 ```
 //prepare the data
@@ -41,8 +30,7 @@ let jsonString = "{\"latitude\":\"36.652061\",\"longitude\":\"117.120144\",\"sha
 w3bStream.data = jsonString
 //upload
 w3bStream.upload { data, err in
-} websocketCompletionHandler: { data in
-}
+} 
 ```
 
 ### Other
@@ -52,17 +40,21 @@ You can also use only some of the capabilities in the SDK.
 let payload = W3bStream.makePayload(info: info) 
 ```
 TIP: the type of info must be json string
-####  independent Upload behaviour
-Https upload method
+
+### Update the urls
 ```
-uploadViaHttps(url: URL, payload: payload) { data, res, err in
-                        httpsCompletionHandler?(data, err)
-                    }
+   let httpsurl = URL(string: "https://xxxxx")!
+   let wsurl = URL(string: "wss://xxxxx")!
+   let urls = [httpsurl, wsurl]
+   w3bStream.update(urls)
 ```
-websocket upload method
-```
-uploadViaWebsocket(payload: payload)
-```
+
+
+
+### Sign request
+sign API demonstrates how to verify the unique device
+check the usage in the Demo
+
 
 ## Run the demo
 run `makeframework.sh` first, then `pod install` in the Example, open the Demo.xcworkspace

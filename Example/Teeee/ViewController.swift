@@ -28,10 +28,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var dataLabel: UILabel!
     @IBOutlet weak var tipLabel: UILabel!
-
+    var timer: Timer?
     var hisvc = HistoryViewController()
     
-    var w3bStream: W3bStream = W3bStream()
+    var w3bStream: W3bStream?
     var shakeCounter = 0
     var coordinate: CLLocationCoordinate2D?
     
@@ -53,30 +53,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.coordinate = $0.location?.coordinate
             self.makeNewData()
         }
-        
-        _ = W3bStream.create()
     }
     
-    @objc func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        tf1.endEditing(true)
-        if textField == tf1 {
-            if tf1.text?.isEmpty == false, let url = URL(string: tf1.text!) {
-                if url.scheme?.lowercased() == "https" {
-                    w3bStream.config(url)
-                }else if url.scheme?.lowercased() == "wss" {
-                    w3bStream.buildWebsocketConnect(url)
-                }
-            }
-            
-        }
-        return true
-    }
     
     @IBAction func upload(_ sender: Any) {
         
         if uploadBtn.isSelected {
-            self.w3bStream.stop()
             uploadBtn.isSelected = false
+            if timer != nil {
+                timer?.invalidate()
+                timer = nil
+            }
             self.view.makeToast("upload stopped")
             return
         }
@@ -91,13 +78,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        if tf1.text?.isEmpty == false, let url = URL(string: tf1.text!) {
-            if url.scheme?.lowercased() == "https" {
-                w3bStream.config(url)
-            }else if url.scheme?.lowercased() == "wss" {
-                //import, the websocket needs to be built
-                w3bStream.buildWebsocketConnect(url)
-            }
+        if tf1.text?.isEmpty == false, let url = URL(string: tf1.text!), w3bStream == nil {
+            w3bStream = W3bStream(urls: [url])
         }
         
         uploadBtn.isSelected = true
@@ -105,51 +87,37 @@ class ViewController: UIViewController, UITextFieldDelegate {
         makeNewData()
         let latitude = coordinate?.latitude ?? 0
         let longitude = coordinate?.longitude ?? 0
-        self.w3bStream.interval = (intervaltf.text?.isEmpty ?? true) ? 0 : Int(intervaltf.text!)!
-        self.w3bStream.upload { data, err in
-            
-            DispatchQueue.main.async {
-
-                DataModel(shakeCount: self.shakeCounter, timestamp: Date().timeIntervalSince1970, latitude: "\(latitude)", longitude: "\(longitude)").add()
-                self.hisvc.reloadData()
-                guard let data = data else {
-                    return
+        let interval = (intervaltf.text?.isEmpty ?? true) ? 0 : Int(intervaltf.text!)!
+        
+        if timer == nil {
+            timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(interval), repeats: interval > 0) { _ in
+                self.w3bStream!.upload { data, err in
+                    
+                    DispatchQueue.main.async {
+                        DataModel(shakeCount: self.shakeCounter, timestamp: Date().timeIntervalSince1970, latitude: "\(latitude)", longitude: "\(longitude)").add()
+                        self.hisvc.reloadData()
+                        guard let data = data else {
+                            return
+                        }
+                        if let json = try? JSONSerialization.jsonObject(with: data, options: []) {
+                            let dic = json as! Dictionary<String, Any>
+                            print("https res \(dic)")
+                            DispatchQueue.main.async {
+                                self.view.makeToast("Upload success")
+                            }
+                        }else {
+                            DispatchQueue.main.async {
+                                self.view.makeToast("Upload success")
+                            }
+                        }
+                        self.shakeCounter = 0
+                    }
+                                
                 }
-                if let json = try? JSONSerialization.jsonObject(with: data, options: []) {
-                    let dic = json as! Dictionary<String, Any>
-                    print("https res \(dic)")
-                    DispatchQueue.main.async {
-                        self.view.makeToast("Upload success")
-                    }
-                }else {
-                    DispatchQueue.main.async {
-                        self.view.makeToast("Upload success")
-                    }
-                }
-                
-            }
-                        
-        } websocketCompletionHandler: { data in
-            DispatchQueue.main.async {
-
-
-                DataModel(shakeCount: self.shakeCounter, timestamp: Date().timeIntervalSince1970, latitude: "\(latitude)", longitude: "\(longitude)").add()
-                self.hisvc.reloadData()
-                if let json = try? JSONSerialization.jsonObject(with: data, options: []) {
-                    let dic = json as! Dictionary<String, Any>
-                    print("https res \(dic)")
-                    DispatchQueue.main.async {
-                        self.view.makeToast("Upload success")
-                    }
-                }else {
-                    DispatchQueue.main.async {
-                        self.view.makeToast("Upload success")
-                    }
-                }
-                
             }
         }
-        self.shakeCounter = 0
+        timer?.fire()
+         
         
     }
     
@@ -179,7 +147,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let latitude = coordinate?.latitude ?? 0
         let longitude = coordinate?.longitude ?? 0
         let jsonString = "{\"latitude\":\"\(latitude)\",\"longitude\":\"\(longitude)\",\"shakeCount\": \(shakeCounter),\"timestamp\":\(timestamp), \"imei\":\"\(imeitf.text!)\"}"
-        self.w3bStream.data = jsonString
+        if self.w3bStream != nil {
+            self.w3bStream!.data = jsonString
+        }
         dataLabel.text = "latitude: \(latitude), longitude: \(longitude), shakeCount: \(shakeCounter)"
     }
 }

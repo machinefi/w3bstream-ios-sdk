@@ -2,8 +2,8 @@ import UIKit
 
 class Config: NSObject {
     static let shared = Config()
-    var httpsUrl: URL?
-    var websocketUrl: URL?
+    var httpsUrls: [URL] = []
+    var websocketUrls: [URL] = []
 }
 
 let imei_key = "com.mf.W3bStream.imei"
