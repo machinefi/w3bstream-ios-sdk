@@ -16,12 +16,13 @@ public class W3bStream: NSObject {
     /// - Returns: true if successed
     public static func create() -> Bool {
         
-        _ = try? MFKeychainHelper.makeAndStoreKey(name: MFKeychainHelper.PrivateKeyName)
-        guard MFKeychainHelper.loadKey(name: MFKeychainHelper.PrivateKeyName) != nil else {
-            print("private key failed")
-            return true
+        if MFKeychainHelper.loadKey(name: MFKeychainHelper.PrivateKeyName) == nil {
+            _ = try? MFKeychainHelper.makeAndStoreKey(name: MFKeychainHelper.PrivateKeyName)
         }
-        return false
+        guard MFKeychainHelper.loadKey(name: MFKeychainHelper.PrivateKeyName) != nil else {
+            return false
+        }
+        return true
     }
     
     /// config the url

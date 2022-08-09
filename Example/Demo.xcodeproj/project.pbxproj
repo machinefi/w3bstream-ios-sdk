@@ -23,6 +23,8 @@
 		F6730A47286D557200628B36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6730A45286D557200628B36 /* Main.storyboard */; };
 		F6730A49286D557300628B36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6730A48286D557300628B36 /* Assets.xcassets */; };
 		F6730A4C286D557300628B36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6730A4A286D557300628B36 /* LaunchScreen.storyboard */; };
+		F6C83A0E28A23A2D008C84C3 /* RealmDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C83A0D28A23A2D008C84C3 /* RealmDBHelper.swift */; };
+		F6C83A0F28A23A2D008C84C3 /* RealmDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C83A0D28A23A2D008C84C3 /* RealmDBHelper.swift */; };
 		F6CBB0AF289B648700B0330B /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB0AE289B648700B0330B /* SignViewController.swift */; };
 		F6CBB0B0289B648900B0330B /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB0AE289B648700B0330B /* SignViewController.swift */; };
 		F6CBB0B3289B844300B0330B /* Data+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB0B1289B844300B0330B /* Data+Ex.swift */; };
@@ -104,6 +106,7 @@
 		F6730A4D286D557300628B36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6730A52286D557300628B36 /* DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6730A5C286D557300628B36 /* DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6C83A0D28A23A2D008C84C3 /* RealmDBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDBHelper.swift; sourceTree = "<group>"; };
 		F6CBB0AE289B648700B0330B /* SignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewController.swift; sourceTree = "<group>"; };
 		F6CBB0B1289B844300B0330B /* Data+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Data+Ex.swift"; path = "../../DataUpload/Ex/Data+Ex.swift"; sourceTree = "<group>"; };
 		F6CBB0B2289B844300B0330B /* String+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Ex.swift"; path = "../../DataUpload/Ex/String+Ex.swift"; sourceTree = "<group>"; };
@@ -219,6 +222,7 @@
 				F6CBB279289F4BBA00B0330B /* DataModel.swift */,
 				F6CBB0B1289B844300B0330B /* Data+Ex.swift */,
 				F6CBB0B2289B844300B0330B /* String+Ex.swift */,
+				F6C83A0D28A23A2D008C84C3 /* RealmDBHelper.swift */,
 				F608D73C2893ADC900A64115 /* Device */,
 				F608D73A2893ADC900A64115 /* Simulator */,
 				F6730A3F286D557200628B36 /* AppDelegate.swift */,
@@ -486,6 +490,7 @@
 				F608D5D528939B6800A64115 /* ViewController.swift in Sources */,
 				F608D5D628939B6800A64115 /* AppDelegate.swift in Sources */,
 				F608D5D728939B6800A64115 /* SceneDelegate.swift in Sources */,
+				F6C83A0F28A23A2D008C84C3 /* RealmDBHelper.swift in Sources */,
 				F6CBB278289F491600B0330B /* HistoryViewController.swift in Sources */,
 				F6CBB0B4289B844300B0330B /* Data+Ex.swift in Sources */,
 			);
@@ -501,6 +506,7 @@
 				F6730A44286D557200628B36 /* ViewController.swift in Sources */,
 				F6730A40286D557200628B36 /* AppDelegate.swift in Sources */,
 				F6730A42286D557200628B36 /* SceneDelegate.swift in Sources */,
+				F6C83A0E28A23A2D008C84C3 /* RealmDBHelper.swift in Sources */,
 				F6CBB277289F491600B0330B /* HistoryViewController.swift in Sources */,
 				F6CBB0B3289B844300B0330B /* Data+Ex.swift in Sources */,
 			);
@@ -758,7 +764,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 73WQ7ZGSWC;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -769,6 +775,8 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Teeee/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "need your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "need your location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -795,7 +803,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 73WQ7ZGSWC;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -806,6 +814,8 @@
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Teeee/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "need your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "need your location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

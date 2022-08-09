@@ -20,10 +20,10 @@
 				</dict>
 			</array>
 		</dict>
+		<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+		<string>need your location</string>
+		<key>NSLocationWhenInUseUsageDescription</key>
+		<string>need your location</string>
 	</dict>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>need your location</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>need your location</string>
 </dict>
 </plist>
