@@ -31,15 +31,14 @@ w3bStream.upload(data: jsonString) { data, err in
 } 
 ```
 
-### Other
+## Other
 You can also use only some of the capabilities in the SDK. 
-#### Sign
+### Sign
 generate the signature with private key stored in the keychain and ABI encoding
 ```
 let jsonData = "xxxx".data(using: .utf8)
 let signature = W3bStream.sign(jsonData)
 ```
-
 ### Update the urls
 ```
    let httpsurl = URL(string: "https://xxxxx")!
@@ -47,9 +46,6 @@ let signature = W3bStream.sign(jsonData)
    let urls = [httpsurl, wsurl]
    w3bStream.update(urls)
 ```
-
-
-
 ### Sign request
 sign API demonstrates how to verify the unique device
 check the usage in the Demo
