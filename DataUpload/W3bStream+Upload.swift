@@ -33,15 +33,8 @@ public extension W3bStream {
                ]
         
     }
-    
-    /// make the websocket upload payload
-    /// - Parameters:
-    ///   - info: json string
-    /// - Returns: description
-    static func makeWebsocketPayload(_ info: String) -> [String:Any]? {
-       guard let payload = makePayload(info: info) else {
-           return nil
-       }
+
+    static func makeWebsocketPayload(_ payload: [String: Any]) -> [String:Any]? {
         let dic = ["id": 28,
                    "jsonrpc": "2.0",
                    "method": "mutation",
@@ -91,25 +84,24 @@ public extension W3bStream {
     ///   - httpsCompletionHandler:
     ///   - websocketCompletionHandler: 
     func upload(data: String, completionHandler: ((Data?, Error?) -> Void)?) {
+        guard let payload = W3bStream.makePayload(info: data) else {
+            return
+        }
         if Config.shared.httpsUrls.count > 0 {
-                guard let payload = W3bStream.makePayload(info: data) else {
-                    return
-                }
-                Config.shared.httpsUrls.forEach { url in
-                    self.uploadViaHttps(url: url,payload: payload) { data, res, err in
-                        completionHandler?(data, err)
-                    }
+            Config.shared.httpsUrls.forEach { url in
+                self.uploadViaHttps(url: url,payload: payload) { data, res, err in
+                    completionHandler?(data, err)
                 }
             }
+        }
             
         if Config.shared.websocketUrls.count > 0 {
             if self.w3bWebsocketDidReceiveData == nil {
-                    self.w3bWebsocketDidReceiveData = completionHandler
+                self.w3bWebsocketDidReceiveData = completionHandler
             }
-            guard let payload = W3bStream.makeWebsocketPayload(data) else {
+            guard let payload = W3bStream.makeWebsocketPayload(payload) else {
                 return
             }
-            
             Config.shared.websocketUrls.forEach { _ in
                 self.uploadViaWebsocket(payload: payload)
             }
