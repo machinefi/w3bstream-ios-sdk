@@ -7,7 +7,7 @@ public class W3bStream: NSObject {
     
     /// init the instance
     /// - Parameter urls: https or wss url
-    public init(urls: [URL]){
+    public init(urls: [URL] = []){
         super.init()
         guard create() else {
             fatalError("error.private key failed")
@@ -65,6 +65,22 @@ public class W3bStream: NSObject {
     /// - Parameter urls: https or wss url
     public func updateURLs(_ urls: [URL]) {
         config(urls)
+    }
+    
+    
+    /// generate the signature with private key stored in the keychain and ABI encoding
+    /// - Parameter data: Data
+    /// - Returns: signature
+    static func sign(_ data: Data) -> Data? {
+        let hash = data.sha256()
+        guard let key = MFKeychainHelper.loadKey(name: MFKeychainHelper.PrivateKeyName) else {
+            print("load key failed")
+            return nil
+        }
+        guard let signature = MFKeychainHelper.makeSignatureWithABIEncoding(key, hash: hash) else {
+            return nil
+        }
+        return signature
     }
     
 }

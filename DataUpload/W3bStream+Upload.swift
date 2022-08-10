@@ -13,19 +13,17 @@ public extension W3bStream {
             return nil
         }
 
-        let hash = jsonData.sha256()
+        guard let signature = sign(jsonData) else {
+                return nil
+        }
         guard let key = MFKeychainHelper.loadKey(name: MFKeychainHelper.PrivateKeyName) else {
             print("load key failed")
             return nil
-        }
-        guard let signature = MFKeychainHelper.makeSignatureWithABIEncoding(key, hash: hash) else {
-                return nil
         }
         guard let pubKey = MFKeychainHelper.getPubKey(key) else {
             return [:]
         }
         let compressPubKey = MFKeychainHelper.compressedPubKey(pubKey)
-
         
         return ["data": info,
                 "pubKey": "\(compressPubKey)",
@@ -33,6 +31,8 @@ public extension W3bStream {
                ]
         
     }
+    
+
 
     static func makeWebsocketPayload(_ payload: [String: Any]) -> [String:Any]? {
         let dic = ["id": 28,

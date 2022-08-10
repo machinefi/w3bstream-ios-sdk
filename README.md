@@ -33,11 +33,12 @@ w3bStream.upload(data: jsonString) { data, err in
 
 ### Other
 You can also use only some of the capabilities in the SDK. 
-#### Generate Payload  
+#### Sign
+generate the signature with private key stored in the keychain and ABI encoding
 ```
-let payload = W3bStream.makePayload(info: info) 
+let jsonData = "xxxx".data(using: .utf8)
+let signature = W3bStream.sign(jsonData)
 ```
-TIP: the type of info must be json string
 
 ### Update the urls
 ```
