@@ -1,10 +1,7 @@
 import Foundation
 
 public extension MFKeychainHelper {
-    static func makeSignatureWithABIEncoding(_ privateKey: SecKey, hash: Data) -> Data? {
-        guard let cipherData = MFKeychainHelper.createSignature(privateKey, algorithm: .ecdsaSignatureDigestX962SHA256, hashData: hash) else {
-            return nil
-        }
+    static func ABIEncoding(_ cipherData: Data) -> Data? {
         let sigString = cipherData.hexEncodedString()
         let xlength = 2 * Int(sigString.subString(start:6, length: 2), radix: 16)!
         let newSigString = sigString.subString(start: 8)

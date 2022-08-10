@@ -13,9 +13,14 @@ public extension W3bStream {
             return nil
         }
 
-        guard let signature = sign(jsonData) else {
-                return nil
+        guard let _signature = sign(jsonData) else {
+            return nil
         }
+        
+        guard let signature = MFKeychainHelper.ABIEncoding(_signature) else {
+            return nil
+        }
+        
         guard let key = MFKeychainHelper.loadKey(name: MFKeychainHelper.PrivateKeyName) else {
             print("load key failed")
             return nil
