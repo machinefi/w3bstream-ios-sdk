@@ -193,7 +193,6 @@ public class MFKeychainHelper {
         guard let privateKey = SecKeyCreateRandomKey(attributes as CFDictionary, &error) else {
             throw error!.takeRetainedValue() as Error
         }
-        
         return privateKey
     }
     

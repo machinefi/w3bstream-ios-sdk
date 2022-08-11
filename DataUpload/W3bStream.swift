@@ -60,7 +60,6 @@ public class W3bStream: NSObject {
         }
     }
     
-    
     /// update the urls
     /// - Parameter urls: https or wss url
     public func updateURLs(_ urls: [URL]) {
@@ -77,10 +76,15 @@ public class W3bStream: NSObject {
             print("load key failed")
             return nil
         }
-        guard let signature = MFKeychainHelper.createSignature(privateKey, algorithm: .ecdsaSignatureDigestX962SHA256, hashData: hash) else {
-            return nil
+        do {
+            guard let signature = try MFKeychainHelper.createSignature(privateKey, algorithm: .ecdsaSignatureDigestX962SHA256, hashData: hash) else {
+                return nil
+            }
+            return signature
+        }catch let e {
+            print(e)
         }
-        return signature
+        return nil
     }
     
 }

@@ -18,11 +18,13 @@ public extension MFKeychainHelper {
         return nil
     }
     
-    static func createSignature(_ privateKey: SecKey, algorithm: SecKeyAlgorithm = .ecdsaSignatureDigestX962SHA256, hashData: Data) -> Data? {
+    static func createSignature(_ privateKey: SecKey, algorithm: SecKeyAlgorithm = .ecdsaSignatureDigestX962SHA256, hashData: Data) throws -> Data? {
         var error: Unmanaged<CFError>?
-        let signature = SecKeyCreateSignature(privateKey, algorithm,
+        guard let signature = SecKeyCreateSignature(privateKey, algorithm,
                                               hashData as CFData,
-                                          &error) as Data?
+                                                    &error) as Data? else {
+            throw error!.takeRetainedValue() as Error
+        }
         return signature
     }
 }

@@ -25,6 +25,8 @@
 		F6730A4C286D557300628B36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6730A4A286D557300628B36 /* LaunchScreen.storyboard */; };
 		F6C83A0E28A23A2D008C84C3 /* RealmDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C83A0D28A23A2D008C84C3 /* RealmDBHelper.swift */; };
 		F6C83A0F28A23A2D008C84C3 /* RealmDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C83A0D28A23A2D008C84C3 /* RealmDBHelper.swift */; };
+		F6C83A2028A4CA2A008C84C3 /* W3bStream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6C83A1E28A4CA24008C84C3 /* W3bStream.framework */; };
+		F6C83A2128A4CA2A008C84C3 /* W3bStream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F6C83A1E28A4CA24008C84C3 /* W3bStream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F6CBB0AF289B648700B0330B /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB0AE289B648700B0330B /* SignViewController.swift */; };
 		F6CBB0B0289B648900B0330B /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB0AE289B648700B0330B /* SignViewController.swift */; };
 		F6CBB0B3289B844300B0330B /* Data+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB0B1289B844300B0330B /* Data+Ex.swift */; };
@@ -32,8 +34,6 @@
 		F6CBB0B5289B844300B0330B /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB0B2289B844300B0330B /* String+Ex.swift */; };
 		F6CBB0B6289B844300B0330B /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB0B2289B844300B0330B /* String+Ex.swift */; };
 		F6CBB244289B8F8C00B0330B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6CBB242289B8F7200B0330B /* Security.framework */; };
-		F6CBB271289BAE1400B0330B /* W3bStream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6CBB26F289BADE900B0330B /* W3bStream.framework */; };
-		F6CBB272289BAE1400B0330B /* W3bStream.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F6CBB26F289BADE900B0330B /* W3bStream.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F6CBB277289F491600B0330B /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB276289F491600B0330B /* HistoryViewController.swift */; };
 		F6CBB278289F491600B0330B /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB276289F491600B0330B /* HistoryViewController.swift */; };
 		F6CBB27A289F4BBA00B0330B /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CBB279289F4BBA00B0330B /* DataModel.swift */; };
@@ -75,7 +75,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F6CBB272289BAE1400B0330B /* W3bStream.framework in Embed Frameworks */,
+				F6C83A2128A4CA2A008C84C3 /* W3bStream.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,11 +107,11 @@
 		F6730A52286D557300628B36 /* DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6730A5C286D557300628B36 /* DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6C83A0D28A23A2D008C84C3 /* RealmDBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDBHelper.swift; sourceTree = "<group>"; };
+		F6C83A1E28A4CA24008C84C3 /* W3bStream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = W3bStream.framework; sourceTree = "<group>"; };
 		F6CBB0AE289B648700B0330B /* SignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignViewController.swift; sourceTree = "<group>"; };
 		F6CBB0B1289B844300B0330B /* Data+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Data+Ex.swift"; path = "../../DataUpload/Ex/Data+Ex.swift"; sourceTree = "<group>"; };
 		F6CBB0B2289B844300B0330B /* String+Ex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Ex.swift"; path = "../../DataUpload/Ex/String+Ex.swift"; sourceTree = "<group>"; };
 		F6CBB242289B8F7200B0330B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		F6CBB26F289BADE900B0330B /* W3bStream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = W3bStream.framework; sourceTree = "<group>"; };
 		F6CBB276289F491600B0330B /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		F6CBB279289F4BBA00B0330B /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,8 +121,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6C83A2028A4CA2A008C84C3 /* W3bStream.framework in Frameworks */,
 				F6CBB244289B8F8C00B0330B /* Security.framework in Frameworks */,
-				F6CBB271289BAE1400B0330B /* W3bStream.framework in Frameworks */,
 				D780DF7DF256D155A1E03798 /* Pods_App_Demo_Simulator_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,7 +181,7 @@
 		F608D73A2893ADC900A64115 /* Simulator */ = {
 			isa = PBXGroup;
 			children = (
-				F6CBB26F289BADE900B0330B /* W3bStream.framework */,
+				F6C83A1E28A4CA24008C84C3 /* W3bStream.framework */,
 			);
 			path = Simulator;
 			sourceTree = "<group>";
