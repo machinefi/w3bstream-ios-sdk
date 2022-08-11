@@ -36,9 +36,8 @@ extension MFKeychainHelper {
         var error: Unmanaged<CFError>?
         if let keyData = SecKeyCopyExternalRepresentation(publicKey, &error) as Data? {
             return keyData.hexEncodedString()
-        } else {
-            return nil
         }
+        return nil
     }
     
     public static func compressedPubKey(_ publicKey: String) -> String {

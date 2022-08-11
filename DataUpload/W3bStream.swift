@@ -73,11 +73,11 @@ public class W3bStream: NSObject {
     /// - Returns: signature
     static func sign(_ data: Data) -> Data? {
         let hash = data.sha256()
-        guard let key = MFKeychainHelper.loadKey(name: MFKeychainHelper.PrivateKeyName) else {
+        guard let privateKey = MFKeychainHelper.loadKey(name: MFKeychainHelper.PrivateKeyName) else {
             print("load key failed")
             return nil
         }
-        guard let signature = MFKeychainHelper.makeSignatureWithABIEncoding(key, hash: hash) else {
+        guard let signature = MFKeychainHelper.createSignature(privateKey, algorithm: .ecdsaSignatureDigestX962SHA256, hashData: hash) else {
             return nil
         }
         return signature
