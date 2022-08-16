@@ -67,10 +67,10 @@ public class W3bStream: NSObject {
     }
     
     
-    /// generate the signature with private key stored in the keychain and ABI encoding
+    /// generate the signature with private key. data is the original data
     /// - Parameter data: Data
     /// - Returns: signature
-    static func sign(_ data: Data) -> Data? {
+    public static func sign(_ data: Data) -> Data? {
         let hash = data.sha256()
         guard let privateKey = MFKeychainHelper.loadKey(name: MFKeychainHelper.PrivateKeyName) else {
             print("load key failed")
