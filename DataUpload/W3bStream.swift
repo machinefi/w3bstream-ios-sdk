@@ -3,7 +3,7 @@ import Foundation
 import UIKit
 
 public class W3bStream: NSObject {
-    var w3bWebsocketDidReceiveData: ((Data?, Error?)->Void)?    
+    var w3bWebsocketDidReceiveData: ((Int?, URL?, Data?, Error?)->Void)?
     
     /// init the instance
     /// - Parameter urls: https or wss url
@@ -55,8 +55,8 @@ public class W3bStream: NSObject {
     private func buildWebsocketConnect(_ url: URL) {
         WebSocketManager.shared.addConnect(url)
         WebSocketManager.shared.websocketDidReceiveData = nil
-        WebSocketManager.shared.websocketDidReceiveData = { [weak self] data, err in
-            self?.w3bWebsocketDidReceiveData?(data, err)
+        WebSocketManager.shared.websocketDidReceiveData = { [weak self] tag, url, data, err in
+            self?.w3bWebsocketDidReceiveData?(tag, url, data, err)
         }
     }
     

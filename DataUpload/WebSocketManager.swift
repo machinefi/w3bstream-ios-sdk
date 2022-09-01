@@ -2,7 +2,7 @@ import UIKit
 class WebSocketManager: NSObject {
 
     static let shared = WebSocketManager()
-    var websocketDidReceiveData: ((Data?, Error?)->Void)?
+    var websocketDidReceiveData: ((Int?, URL?, Data?, Error?)->Void)?
     var socketsMap = [String: WebSocket]()
 
     func addConnect(_ url: URL) {
@@ -47,11 +47,15 @@ extension WebSocketManager: WebSocketDelegate {
     func websocketDidReceiveMessage(socket: WebSocketClient, text: String){
         let data = Data(text.utf8)
         print("websocketDidReceiveData \(text)")
-        websocketDidReceiveData?(data, nil)
+        websocketDidReceiveData(socket: socket, data: data)
     }
+    
     func websocketDidReceiveData(socket: WebSocketClient, data: Data){
         let str = String(decoding: data, as: UTF8.self)
+        let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+        let tag = json?["id"] as? Int
         print("websocketDidReceiveData \(str)")
-        websocketDidReceiveData?(data, nil)
+        websocketDidReceiveData?(tag, (socket as! WebSocket).request.url, data, nil)
     }
+    
 }

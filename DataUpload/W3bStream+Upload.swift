@@ -39,8 +39,8 @@ public extension W3bStream {
     
 
 
-    static func makeWebsocketPayload(_ payload: [String: Any]) -> [String:Any]? {
-        let dic = ["id": 28,
+    static func makeWebsocketPayload(tag: Int?=nil, payload: [String: Any]) -> [String:Any]? {
+        let dic = ["id": tag ?? 10,
                    "jsonrpc": "2.0",
                    "method": "mutation",
                    "params": [
@@ -87,15 +87,16 @@ public extension W3bStream {
     /// upload the data timely, chose to use https and websocket automatically
     /// - Parameters:
     ///   - httpsCompletionHandler:
-    ///   - websocketCompletionHandler: 
-    func upload(data: String, completionHandler: ((Data?, Error?) -> Void)?) {
+    ///   - websocketCompletionHandler:
+    ///   - tag: the unique tag binds with the data,  you can get the tag from the completionHandler
+    func upload(data: String, tag: Int?=nil, completionHandler: ((Int?, URL?, Data?, Error?) -> Void)?) {
         guard let payload = W3bStream.makePayload(info: data) else {
             return
         }
         if Config.shared.httpsUrls.count > 0 {
             Config.shared.httpsUrls.forEach { url in
                 self.uploadViaHttps(url: url,payload: payload) { data, res, err in
-                    completionHandler?(data, err)
+                    completionHandler?(tag, res?.url, data, err)
                 }
             }
         }
@@ -104,7 +105,7 @@ public extension W3bStream {
             if self.w3bWebsocketDidReceiveData == nil {
                 self.w3bWebsocketDidReceiveData = completionHandler
             }
-            guard let payload = W3bStream.makeWebsocketPayload(payload) else {
+            guard let payload = W3bStream.makeWebsocketPayload(tag: tag, payload: payload) else {
                 return
             }
             Config.shared.websocketUrls.forEach { _ in
