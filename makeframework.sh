@@ -64,12 +64,21 @@ function build_zip {
     zip -r -m -o ${framework_name}.framework.zip ${framework_name}.framework || exit 1
 }
 
+# make xcframewrok
+function build_xcframework {
+xcodebuild -create-xcframework \
+ -framework ${build_dir}/Release-iphoneos/${framework_name}.framework \
+ -framework ${build_dir}/Release-iphonesimulator/${framework_name}.framework \
+ -output ${out_dir}/${framework_name}.xcframework
+}
+
 
 # 调用
 build_clean
 build_config
 build_framework
-build_fat_framework
+# build_fat_framework
+build_xcframework
 build_zip
 
 
