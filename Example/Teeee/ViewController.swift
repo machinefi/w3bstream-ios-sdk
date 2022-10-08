@@ -92,7 +92,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         if timer == nil {
             timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(interval), repeats: interval > 0) { _ in
-                self.w3bStream!.upload(data: self.jsonstring) { data, err in
+                self.w3bStream!.upload(data: self.jsonstring) {tag, url, data, err in
                     
                     DispatchQueue.main.async {
                         DataModel(shakeCount: self.shakeCounter, timestamp: Date().timeIntervalSince1970, latitude: "\(latitude)", longitude: "\(longitude)").add()

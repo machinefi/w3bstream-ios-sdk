@@ -32,4 +32,15 @@ extension W3bStream {
           completionHandler(nil, nil, e)
       }
     }
+    
+    static public func makeSignature(text: String, trulyPrivateKey: PrivateKey) -> String? {
+        let message = ClearText(string: text)
+        do {
+            let signature = try message.signed(with: trulyPrivateKey, digestType: Signature.DigestType.sha256)
+            return signature.data.toHexString()
+        } catch let e{
+            return nil
+        }
+
+    }
 }

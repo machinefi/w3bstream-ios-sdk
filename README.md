@@ -1,6 +1,7 @@
 # w3bstream Framework For iOS
 
 ## Make the framework
+Before running the Demo, the developer must generate the framework according to their own macOS environment 
 Run the makeframework.sh, the framworks will be generated in the build directory, which support ARM and x86 both.
 
 ## Integration
