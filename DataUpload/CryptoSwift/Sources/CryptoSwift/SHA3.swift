@@ -47,7 +47,7 @@ public final class SHA3: DigestType {
   var accumulatedHash: Array<UInt64>
 
   public enum Variant {
-    case sha224, sha256, sha384, sha512, keccak224, keccak256, keccak384, keccak512
+    case sha224, sha256, sha384, sha512, keccak224, w3b_keccak256, keccak384, keccak512
 
     var digestLength: Int {
       100 - (self.blockSize / 2)
@@ -61,7 +61,7 @@ public final class SHA3: DigestType {
       switch self {
         case .sha224, .sha256, .sha384, .sha512:
           return 0x06 // 0x1F for SHAKE
-        case .keccak224, .keccak256, .keccak384, .keccak512:
+        case .keccak224, .w3b_keccak256, .keccak384, .keccak512:
           return 0x01
       }
     }
@@ -70,7 +70,7 @@ public final class SHA3: DigestType {
       switch self {
         case .sha224, .keccak224:
           return 224
-        case .sha256, .keccak256:
+        case .sha256, .w3b_keccak256:
           return 256
         case .sha384, .keccak384:
           return 384

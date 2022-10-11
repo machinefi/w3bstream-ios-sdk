@@ -175,11 +175,11 @@ extension ABI.Element.Function {
     }
     
     public var methodString: String {
-        return String(signature.sha3(.keccak256).prefix(8))
+        return String(signature.sha3(.w3b_keccak256).prefix(8))
     }
     
     public var methodEncoding: Data {
-        return signature.data(using: .ascii)!.sha3(.keccak256)[0...3]
+        return signature.data(using: .ascii)!.sha3(.w3b_keccak256)[0...3]
     }
 }
 
@@ -190,7 +190,7 @@ extension ABI.Element.Event {
     }
     
     public var topic: Data {
-        return signature.data(using: .ascii)!.sha3(.keccak256)
+        return signature.data(using: .ascii)!.sha3(.w3b_keccak256)
     }
 }
 

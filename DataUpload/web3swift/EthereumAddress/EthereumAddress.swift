@@ -56,7 +56,7 @@ public struct EthereumAddress: Equatable {
     
     public static func toChecksumAddress(_ addr:String) -> String? {
         let address = addr.lowercased().stripHexPrefix()
-        guard let hash = address.data(using: .ascii)?.sha3(.keccak256).toHexString().stripHexPrefix() else {return nil}
+        guard let hash = address.data(using: .ascii)?.sha3(.w3b_keccak256).toHexString().stripHexPrefix() else {return nil}
         var ret = "0x"
         
         for (i,char) in address.enumerated() {
