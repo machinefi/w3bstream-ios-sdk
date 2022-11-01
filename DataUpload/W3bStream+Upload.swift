@@ -72,6 +72,14 @@ public extension W3bStream {
         
     }
     
+    func makeNewAPIPayload(url: URL, payload: [String: Any], event_type: String, pubkey: String, token: String) -> [String: Any] {
+        let dic = [
+            "header": ["event_type": event_type, "pub_id": pubkey, "pub_time": "date \(Date().timeIntervalSince1970)", "token": token],
+            "payload": payload
+        ]
+        return dic
+    }
+    
     /// upload the data using Websocket. the independent method
     /// - Parameters:
     ///   - url: url
@@ -114,6 +122,16 @@ public extension W3bStream {
         }
     }
     
+    
+    func upload(url: URL?=nil, payload: [String: Any], pubKey: String, pubToken: String, completionHandler: ((Data?, Error?) -> Void)?) {
+        let targetURLs = url != nil ? [url!] : Config.shared.httpsUrls
+        targetURLs.forEach { url in
+            let newPayload = makeNewAPIPayload(url: url, payload: payload, event_type: "", pubkey: pubKey, token: pubToken)
+            self.uploadViaHttps(url: url, payload: newPayload) { data, resp, err in
+                completionHandler?(data, err)
+            }
+        }
+    }
     
     /// stop the websocket disconnect
     public func stopWebsocket() {
