@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F6730980286C098300628B36"
-               BuildableName = "W3bStream.framework"
-               BlueprintName = "W3bStream"
-               ReferencedContainer = "container:W3bStream.xcodeproj">
+               BuildableName = "MFW3bStream.framework"
+               BlueprintName = "MFW3bStream"
+               ReferencedContainer = "container:MFW3bStream.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -51,9 +51,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F6730980286C098300628B36"
-            BuildableName = "W3bStream.framework"
-            BlueprintName = "W3bStream"
-            ReferencedContainer = "container:W3bStream.xcodeproj">
+            BuildableName = "MFW3bStream.framework"
+            BlueprintName = "MFW3bStream"
+            ReferencedContainer = "container:MFW3bStream.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

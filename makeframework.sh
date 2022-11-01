@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #参数
-project_name="W3bStream"
+project_name="MFW3bStream"
 framework_name=${project_name}
 build_dir="build"
 out_dir="out"

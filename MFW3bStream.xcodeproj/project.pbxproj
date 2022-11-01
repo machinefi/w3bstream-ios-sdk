@@ -31,7 +31,7 @@
 		F62694DC2874135800149BBB /* BigInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62694C42874135800149BBB /* BigInt.swift */; };
 		F62694DD2874135800149BBB /* String Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F62694C52874135800149BBB /* String Conversion.swift */; };
 		F66BAC2F289A79C3003B478F /* W3bStream+VerifyDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66BAC2E289A79C3003B478F /* W3bStream+VerifyDevice.swift */; };
-		F673098C286C098300628B36 /* W3bStream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6730981286C098300628B36 /* W3bStream.framework */; };
+		F673098C286C098300628B36 /* MFW3bStream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6730981286C098300628B36 /* MFW3bStream.framework */; };
 		F6730991286C098300628B36 /* DataUploadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6730990286C098300628B36 /* DataUploadTests.swift */; };
 		F6730992286C098300628B36 /* DataUpload.h in Headers */ = {isa = PBXBuildFile; fileRef = F6730984286C098300628B36 /* DataUpload.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F673099C286C0AE500628B36 /* MFKeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F673099B286C0AE500628B36 /* MFKeychainHelper.swift */; };
@@ -200,9 +200,9 @@
 		F62694C42874135800149BBB /* BigInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigInt.swift; sourceTree = "<group>"; };
 		F62694C52874135800149BBB /* String Conversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String Conversion.swift"; sourceTree = "<group>"; };
 		F66BAC2E289A79C3003B478F /* W3bStream+VerifyDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "W3bStream+VerifyDevice.swift"; sourceTree = "<group>"; };
-		F6730981286C098300628B36 /* W3bStream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = W3bStream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6730981286C098300628B36 /* MFW3bStream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MFW3bStream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6730984286C098300628B36 /* DataUpload.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataUpload.h; sourceTree = "<group>"; };
-		F673098B286C098300628B36 /* W3bStreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = W3bStreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F673098B286C098300628B36 /* MFW3bStreamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MFW3bStreamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6730990286C098300628B36 /* DataUploadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUploadTests.swift; sourceTree = "<group>"; };
 		F673099B286C0AE500628B36 /* MFKeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFKeychainHelper.swift; sourceTree = "<group>"; };
 		F673099D286C0BA700628B36 /* MFKeychainHelper+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MFKeychainHelper+Ex.swift"; sourceTree = "<group>"; };
@@ -329,7 +329,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F673098C286C098300628B36 /* W3bStream.framework in Frameworks */,
+				F673098C286C098300628B36 /* MFW3bStream.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,8 +393,8 @@
 		F6730982286C098300628B36 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F6730981286C098300628B36 /* W3bStream.framework */,
-				F673098B286C098300628B36 /* W3bStreamTests.xctest */,
+				F6730981286C098300628B36 /* MFW3bStream.framework */,
+				F673098B286C098300628B36 /* MFW3bStreamTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -663,9 +663,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		F6730980286C098300628B36 /* W3bStream */ = {
+		F6730980286C098300628B36 /* MFW3bStream */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F6730995286C098300628B36 /* Build configuration list for PBXNativeTarget "W3bStream" */;
+			buildConfigurationList = F6730995286C098300628B36 /* Build configuration list for PBXNativeTarget "MFW3bStream" */;
 			buildPhases = (
 				F673097C286C098300628B36 /* Headers */,
 				F673097D286C098300628B36 /* Sources */,
@@ -676,14 +676,14 @@
 			);
 			dependencies = (
 			);
-			name = W3bStream;
+			name = MFW3bStream;
 			productName = DataUpload;
-			productReference = F6730981286C098300628B36 /* W3bStream.framework */;
+			productReference = F6730981286C098300628B36 /* MFW3bStream.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F673098A286C098300628B36 /* W3bStreamTests */ = {
+		F673098A286C098300628B36 /* MFW3bStreamTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F6730998286C098300628B36 /* Build configuration list for PBXNativeTarget "W3bStreamTests" */;
+			buildConfigurationList = F6730998286C098300628B36 /* Build configuration list for PBXNativeTarget "MFW3bStreamTests" */;
 			buildPhases = (
 				44089AA15B1C0770E1DD478C /* [CP] Check Pods Manifest.lock */,
 				F6730987286C098300628B36 /* Sources */,
@@ -695,9 +695,9 @@
 			dependencies = (
 				F673098E286C098300628B36 /* PBXTargetDependency */,
 			);
-			name = W3bStreamTests;
+			name = MFW3bStreamTests;
 			productName = DataUploadTests;
-			productReference = F673098B286C098300628B36 /* W3bStreamTests.xctest */;
+			productReference = F673098B286C098300628B36 /* MFW3bStreamTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -718,7 +718,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F673097B286C098300628B36 /* Build configuration list for PBXProject "W3bStream" */;
+			buildConfigurationList = F673097B286C098300628B36 /* Build configuration list for PBXProject "MFW3bStream" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -731,8 +731,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F6730980286C098300628B36 /* W3bStream */,
-				F673098A286C098300628B36 /* W3bStreamTests */,
+				F6730980286C098300628B36 /* MFW3bStream */,
+				F673098A286C098300628B36 /* MFW3bStreamTests */,
 			);
 		};
 /* End PBXProject section */
@@ -946,7 +946,7 @@
 /* Begin PBXTargetDependency section */
 		F673098E286C098300628B36 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F6730980286C098300628B36 /* W3bStream */;
+			target = F6730980286C098300628B36 /* MFW3bStream */;
 			targetProxy = F673098D286C098300628B36 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1179,7 +1179,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F673097B286C098300628B36 /* Build configuration list for PBXProject "W3bStream" */ = {
+		F673097B286C098300628B36 /* Build configuration list for PBXProject "MFW3bStream" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F6730993286C098300628B36 /* Debug */,
@@ -1188,7 +1188,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F6730995286C098300628B36 /* Build configuration list for PBXNativeTarget "W3bStream" */ = {
+		F6730995286C098300628B36 /* Build configuration list for PBXNativeTarget "MFW3bStream" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F6730996286C098300628B36 /* Debug */,
@@ -1197,7 +1197,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F6730998286C098300628B36 /* Build configuration list for PBXNativeTarget "W3bStreamTests" */ = {
+		F6730998286C098300628B36 /* Build configuration list for PBXNativeTarget "MFW3bStreamTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F6730999286C098300628B36 /* Debug */,
