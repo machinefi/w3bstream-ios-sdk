@@ -7,16 +7,11 @@ If you installed the Xcode with previous version, run the makeframework.sh.
 ## Usage
 
 ### Init the instance
-
-Create the instance
-```
-   let httpsurl1 = URL(string: "https://xxxxx")!
-   let w3bStream = W3bStream(urls: [httpsurl1])
+```   let w3bStream = W3bStream(urls: [URL(string: "https://xxxxx")!])
 ```
 
 ### Upload Data
 ```
-//upload
 w3bStream.upload(payload: ["xx": "xx"], pubKey: "xxx", pubToken: "xxx") { data, err in
 } 
 ```
