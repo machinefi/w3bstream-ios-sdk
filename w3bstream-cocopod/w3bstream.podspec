@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/zanyfly/w3bstream'
+  s.homepage         = 'https://github.com/machinefi/w3bstream-ios-sdk/tree/main/w3bstream-cocopod'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'zanyfly' => 'zanyfly@126.com' }
-  s.source           = { :git => 'https://github.com/zanyfly/w3bstream.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/machinefi/w3bstream-ios-sdk/tree/main/w3bstream-cocopod', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
