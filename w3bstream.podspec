@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'w3bstream'
-  s.version          = 'v0.9.1'
+  s.version          = '0.9.1'
   s.summary          = 'A short description of w3bstream.'
 
 # This description is used to generate tags and improve search results.
@@ -16,10 +16,6 @@ Pod::Spec.new do |s|
 #   * Try to keep it short, snappy and to the point.
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
 
   s.homepage         = 'https://github.com/machinefi/w3bstream-ios-sdk'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
