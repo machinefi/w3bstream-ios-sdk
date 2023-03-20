@@ -1,0 +1,4 @@
+framework module MFW3bStream {
+  header "MFW3bStream-Swift.h"
+  requires objc
+}

@@ -1,0 +1,6 @@
+framework module Pods_w3bstream_Example {
+  umbrella header "Pods-w3bstream_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

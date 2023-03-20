@@ -1,0 +1,43 @@
+PODS:
+  - BigInt.swift (1.0.0)
+  - CryptoSwift (1.5.1)
+  - Nimble (10.0.0)
+  - Quick (2.2.1)
+  - Starscream (4.0.4)
+  - SwiftKeychainWrapper (4.0.1)
+  - w3bstream (0.1.0):
+    - BigInt.swift
+    - CryptoSwift
+    - Starscream (~> 4.0.0)
+    - SwiftKeychainWrapper
+
+DEPENDENCIES:
+  - Nimble (~> 10.0.0)
+  - Quick (~> 2.2.0)
+  - w3bstream (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - BigInt.swift
+    - CryptoSwift
+    - Nimble
+    - Quick
+    - Starscream
+    - SwiftKeychainWrapper
+
+EXTERNAL SOURCES:
+  w3bstream:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  BigInt.swift: 1e0ddf08d82166e72dfb0fa8d40301d273081afc
+  CryptoSwift: c4f2debceb38bf44c80659afe009f71e23e4a082
+  Nimble: 5316ef81a170ce87baf72dd961f22f89a602ff84
+  Quick: f5754d69b7013f5864c29aab9ae6f0c79c5bc200
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
+  SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
+  w3bstream: 38cecb71d83c5a85ba6663673859822df8b9e11f
+
+PODFILE CHECKSUM: 4a2917bde7af36516cd8671ecd2ca4a8ba18754e
+
+COCOAPODS: 1.12.0

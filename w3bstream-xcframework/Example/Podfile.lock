@@ -1,0 +1,35 @@
+PODS:
+  - Realm (10.20.0):
+    - Realm/Headers (= 10.20.0)
+  - Realm/Headers (10.20.0)
+  - RealmSwift (10.20.0):
+    - Realm (= 10.20.0)
+  - SnapKit (5.0.1)
+  - SwiftLocation/Core (5.1.0)
+  - Toast-Swift (5.0.1)
+
+DEPENDENCIES:
+  - RealmSwift
+  - SnapKit (~> 5.0.0)
+  - SwiftLocation/Core
+  - Toast-Swift (~> 5.0.1)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - SnapKit
+    - SwiftLocation
+  trunk:
+    - Realm
+    - RealmSwift
+    - Toast-Swift
+
+SPEC CHECKSUMS:
+  Realm: ae32bdc1da7d19c7617e0400201a77acd4a211b9
+  RealmSwift: c95eec6a712924870b2e36c4c081d63ec07e5414
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftLocation: 83e0ea75a1969cee3a1197e2b7095603fc23fde5
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+
+PODFILE CHECKSUM: 4f3ac8c627ce0b2457669f20e4a46cfd683753f7
+
+COCOAPODS: 1.11.2

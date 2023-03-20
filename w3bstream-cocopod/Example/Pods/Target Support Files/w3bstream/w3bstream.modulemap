@@ -1,0 +1,6 @@
+framework module w3bstream {
+  umbrella header "w3bstream-umbrella.h"
+
+  export *
+  module * { export * }
+}
