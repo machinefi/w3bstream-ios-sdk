@@ -51,4 +51,8 @@ extension Data {
         }
         return data
     }
+    
+    func jsonObject(options: JSONSerialization.ReadingOptions = []) throws -> Any {
+        return try JSONSerialization.jsonObject(with: self, options: options)
+    }
 }
