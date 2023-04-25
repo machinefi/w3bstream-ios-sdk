@@ -10,7 +10,8 @@ pod 'w3bstream', '1.0.0'
 
 ### Create the project
 Open the website https://mainnet.w3bstream.com/ 
-Create the project, generate the publisher key and token 
+Create the project, generate the publisher key and token
+Tip: the help document https://docs.w3bstream.com/introduction/readme 
 
 ### Init the instance
 ```   
@@ -57,4 +58,4 @@ w3bStream.upload(header: header, payload: payload, completionHandler: { data, er
 }
 ```
 ### Check the result
-Open the log in the W3bstream website
+Open the log in the W3bstream website. The payloads uploaded are displayed there
