@@ -9,9 +9,11 @@ pod 'w3bstream', '1.0.0'
 ## Usage
 
 ### Create the project
-Open the website https://mainnet.w3bstream.com/ 
-Create the project, generate the publisher key and token
-Tip: the help document https://docs.w3bstream.com/introduction/readme 
+To get started, follow these steps:
+1. Open the website [https://mainnet.w3bstream.com/](https://mainnet.w3bstream.com/)
+2. Create your project on the website
+3. Generate your publisher key and token
+4. Consult the help document at [https://docs.w3bstream.com/introduction/readme](https://docs.w3bstream.com/introduction/readme) 
 
 ### Init the instance
 ```   
