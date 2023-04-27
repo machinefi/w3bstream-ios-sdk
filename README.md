@@ -1,10 +1,11 @@
 ## Installation
 
 ### Installation with CocoaPods
-
+Add the following line to your Podfile:
 ```
 pod 'w3bstream', '1.0.0'
 ```
+Then run  `pod install`  to install the dependency.
 
 ## Usage
 
@@ -16,6 +17,7 @@ To get started, follow these steps:
 4. Consult the help document at [https://docs.w3bstream.com/introduction/readme](https://docs.w3bstream.com/introduction/readme) 
 
 ### Init the instance
+Initialize the W3bstream instance with the URLs of your project, as shown below:
 ```   
 import w3bstream
 
@@ -25,6 +27,7 @@ let w3bStream = W3bStream(urls: [URL(string: url)!])
 ```
 
 ### Make the payload
+Create the payload in JSON format and then encode it as Base64, as shown below:
 ```   
 let latitude = 31.8912140
 let longitude = 108.7645030
@@ -42,6 +45,7 @@ let payload = jsonstring.base64Encoded()
 
 
 ### Upload Data
+Upload the payload data to your project on W3bstream using the  `upload`  method, as shown below:
 
 ```
 let event_id = "yougenerateuuid" //generate by the developer
@@ -60,4 +64,5 @@ w3bStream.upload(header: header, payload: payload, completionHandler: { data, er
 }
 ```
 ### Check the result
-Open the log in the W3bstream website. The payloads uploaded are displayed there
+Check the logs in the W3bstream website to view the payloads uploaded by your application. The uploaded payloads will be displayed there.
+
