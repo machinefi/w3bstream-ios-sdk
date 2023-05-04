@@ -23,6 +23,7 @@ extension Dictionary {
 class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var imeitf: UITextField!
     @IBOutlet weak var intervaltf: UITextField!
+    @IBOutlet weak var walletAddresstf: UITextField!
     @IBOutlet weak var urlLabel: UILabel!
     @IBOutlet weak var uploadBtn: UIButton!
     @IBOutlet weak var containerView: UIView!
@@ -138,14 +139,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let timestamp = Int32(round(Date().timeIntervalSince1970))
         let latitude = coordinate?.latitude ?? 0
         let longitude = coordinate?.longitude ?? 0
-        jsonstring = """
-    {
-        "latitude": "\(latitude)",
-        "longitude": "\(longitude)",
-        "timestamp": \(timestamp),
-        "imei": "\(imeitf.text!)"
-    }
-"""
+        let walletAddress = walletAddresstf.text ?? ""
+        
+        var dic: [String: Any] = [
+            "latitude": "\(latitude)",
+            "longitude": "\(longitude)",
+            "timestamp": timestamp,
+            "imei": "\(imeitf.text!)"
+        ]
+        
+        if let walletAddress = walletAddresstf.text {
+            dic["walletAddress"] = walletAddress
+        }
+        
+        jsonstring = dic.toJsonString()!
         dataLabel.text = "latitude: \(latitude), longitude: \(longitude)"
     }
 }
