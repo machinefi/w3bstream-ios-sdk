@@ -11,7 +11,7 @@ Then run  `pod install`  to install the dependency.
 
 ### Create the project
 To get started, follow these steps:
-1. Login to w3bstream [https://dev.w3bstream.com/](https://dev.w3bstream.com/)
+1. Login to w3bstream [https://mainnet.w3bstream.com/](https://mainnet.w3bstream.com/)
 2. Create your project on the website
 3. Generate your publisher key and token
 
