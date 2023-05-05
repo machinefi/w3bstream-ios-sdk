@@ -14,7 +14,7 @@ To get started, follow these steps:
 1. Login to w3bstream [https://dev.w3bstream.com/](https://dev.w3bstream.com/)
 2. Create your project on the website
 3. Generate your publisher key and token
-4. Consult the help document at [https://docs.w3bstream.com/introduction/readme](https://docs.w3bstream.com/introduction/readme) 
+The detail step at [https://iotex.larksuite.com/docx/UawQd67JPopjqHxlSZmuV9HjsEh](https://iotex.larksuite.com/docx/UawQd67JPopjqHxlSZmuV9HjsEh) 
 
 ### Init the instance
 Initialize the W3bstream instance with the URLs of your project, as shown below:
