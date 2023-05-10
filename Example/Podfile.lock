@@ -11,7 +11,7 @@ PODS:
   - SwiftKeychainWrapper (4.0.1)
   - SwiftLocation/Core (5.1.0)
   - Toast-Swift (5.0.1)
-  - w3bstream (1.0.0):
+  - w3bstream (1.0.1):
     - BigInt.swift
     - CryptoSwift
     - Starscream (~> 4.0.0)
@@ -50,7 +50,7 @@ SPEC CHECKSUMS:
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
   SwiftLocation: 83e0ea75a1969cee3a1197e2b7095603fc23fde5
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
-  w3bstream: 6aedd1e7502e4a41fe7e9dc0c628f13179d8107f
+  w3bstream: a2a6ee1d920b163ff0cd9e8af896b14831aa33fd
 
 PODFILE CHECKSUM: 9ad30dbddbbf766616ee9c3840e562aec8f4bd8a
 

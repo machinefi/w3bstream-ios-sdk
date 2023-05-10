@@ -34,14 +34,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     var w3bStream: W3bStream?
     var coordinate: CLLocationCoordinate2D?
-    var jsonstring = ""
+    var json = [String: Any]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let IMEI = "100" + String("\(Int(arc4random_uniform(899999) + 100000))") + String("\(Int(arc4random_uniform(899999) + 100000))")
         imeitf.text = IMEI
-        intervaltf.text = "10"
-        urlLabel.text = "https://api.w3bstream.com/srv-applet-mgr/v0/event/iostest1"
+        intervaltf.text = "50"
+        urlLabel.text = "http://dev.w3bstream.com:8889/srv-applet-mgr/v0/event/eth_0x2ee1d96cb76579e2c64c9bb045443fb3849491d2_geo_example_claim_nft"
+        walletAddresstf.text = "0x2eE1d96CB76579e2c64C9BB045443Fb3849491D2"
         addChildViewController(hisvc)
         containerView.addSubview(hisvc.view)
         hisvc.view.snp.makeConstraints { make in
@@ -81,23 +82,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
         uploadBtn.isSelected = true
         makeNewData()
         let interval = (intervaltf.text?.isEmpty ?? true) ? 0 : Int(intervaltf.text!)!
-        let payload = self.jsonstring.base64Encoded() ?? ""
-        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQYXlsb2FkIjoiMTc4MTE5MDc5NDgxNTA1OTk2OSIsImlzcyI6InczYnN0cmVhbSJ9.B1I982yTXgPTl7sfBrmDcx471Qz_1Z3fvd-5qA2VZnQ"
-        let pub_id = "publishkey01"
-        let event_id = "uuidyougenerated"
-        let pub_time = Int(Date().timeIntervalSince1970 * 1000)
+        
+        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQYXlsb2FkIjoiOTAyNTQ3MTgxNzYxMDI0NSIsImlzcyI6InczYnN0cmVhbSJ9.8uY4gGMBk4bJwyBsqTY3wGqMPnfSIggfw54k0ln6fwY"
+        let eventType = "DEFAULT"
+        let timestamp = Int(Date().timeIntervalSince1970 * 1000)
         if timer == nil {
             timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(interval), repeats: interval > 0) { _ in
                 
-                let header = W3bHeader(event_type: "ANY", event_id: event_id, pub_id: pub_id, pub_time: pub_time, token: token)
-                self.w3bStream?.upload(header: header, payload: payload, completionHandler: { data, err in
-                    let stringValue = String(decoding: data!, as: UTF8.self)
+                let header = W3bHeader(eventType: eventType, timestamp: timestamp, token: token)
+                self.w3bStream?.upload( header: header, payload: self.json, completionHandler: { data, err in
+                    guard let data = data else {
+                        print("\(err)")
+                        return
+                    }
+                    let stringValue = String(decoding: data, as: UTF8.self)
                     print("\(stringValue)")
                     DispatchQueue.main.async {
                         self.hisvc.reloadData()
-                        guard let data = data else {
-                            return
-                        }
                         if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]]{
                             let dic = json![0]
                             if let wasmResults = dic["wasmResults"] as? [String: Any] {
@@ -137,8 +138,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func makeNewData(){
         let timestamp = Int32(round(Date().timeIntervalSince1970))
-        let latitude = coordinate?.latitude ?? 0
-        let longitude = coordinate?.longitude ?? 0
+        let latitude = 100
+        let longitude = 100
         let walletAddress = walletAddresstf.text ?? ""
         
         var dic: [String: Any] = [
@@ -152,7 +153,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             dic["walletAddress"] = walletAddress
         }
         
-        jsonstring = dic.toJsonString()!
+        json = dic
         dataLabel.text = "latitude: \(latitude), longitude: \(longitude)"
     }
 }

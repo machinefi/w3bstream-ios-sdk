@@ -30,14 +30,14 @@ public class W3bStream: NSObject {
     /// - Parameters:
     ///   - url: https or websocket
     private func config(_ urls: [URL]) {
-            
+        
         Config.shared.httpsUrls.removeAll()
         WebSocketManager.shared.disconnectAll()
         WebSocketManager.shared.socketsMap.removeAll()
         Config.shared.websocketUrls.removeAll()
-
+        
         urls.forEach { url in
-            if url.scheme?.lowercased() == "https" {
+            if url.scheme?.lowercased() == "https" || url.scheme?.lowercased() == "http" {
                 Config.shared.httpsUrls.append(url)
             }else if url.scheme?.lowercased() == "wss" {
                 Config.shared.websocketUrls.append(url)

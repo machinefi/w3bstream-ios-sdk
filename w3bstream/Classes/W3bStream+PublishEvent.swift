@@ -1,10 +1,8 @@
 import Foundation
 
 public struct W3bHeader: Codable {
-    let event_type: String
-    let event_id: String
-    let pub_id: String
-    let pub_time: Int
+    let eventType: String
+    let timestamp: Int
     let token: String
     
     func toDic() -> [String: AnyObject] {
@@ -18,18 +16,16 @@ public struct W3bHeader: Codable {
         return result!
     }
     
-    public init(event_type: String, event_id: String, pub_id: String, pub_time: Int, token: String) {
-        self.event_type = event_type
-        self.event_id = event_id
-        self.pub_id = pub_id
-        self.pub_time = pub_time
+    public init(eventType: String, timestamp: Int, token: String) {
+        self.eventType = eventType
+        self.timestamp = timestamp
         self.token = token
     }
 }
 
 public extension W3bStream {
     
-    func upload(url: URL?=nil, header: W3bHeader, payload: String, completionHandler: ((Data?, Error?) -> Void)?) {
+    func upload(url: URL?=nil, header: W3bHeader, payload: [String: Any], completionHandler: ((Data?, Error?) -> Void)?) {
         
         func dictValueToString(_ dic: [String: Any]) -> String? {
             let data = try? JSONSerialization.data(withJSONObject: dic, options: [])
@@ -39,15 +35,14 @@ public extension W3bStream {
         
         let targetURLs = url != nil ? [url!] : Config.shared.httpsUrls
         targetURLs.forEach { url in
-             let dic = [
-                "events":[
-                    ["header": header.toDic(),
-                     "payload": payload
-                    ] as [String : Any]
-             ]
-            ]
-            self.uploadViaHttps(url: url, payload: dic) { data, resp, err in
-                completionHandler?(data, err)
+            
+            let queryItems = [URLQueryItem(name: "eventType", value: header.eventType), URLQueryItem(name: "timestamp", value: "\(header.timestamp)")]
+            var urlComps = URLComponents(url: url, resolvingAgainstBaseURL: false)
+            urlComps?.queryItems = queryItems
+            if let _url = urlComps?.url {
+                self.uploadViaHttps(url: _url, payload: payload, headers: ["Authorization": header.token, "Content-Type":"application/octet-stream"]) { data, resp, err in
+                    completionHandler?(data, err)
+                }
             }
         }
     }

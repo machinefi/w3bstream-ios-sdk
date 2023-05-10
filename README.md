@@ -55,7 +55,7 @@ let pub_id = "publishkey01"
 let event_id = "uuidyougenerated"
 let pub_time = Int(Date().timeIntervalSince1970 * 1000)
 
-let header = W3bHeader(event_type: "ANY", event_id: event_id, pub_id: pub_id, pub_time: pub_time, token: token)
+let header = W3bHeader(eventType: "ANY", event_id: event_id, pub_id: pub_id, pub_time: pub_time, token: token)
 w3bStream.upload(header: header, payload: payload, completionHandler: { data, err in
         if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]]{
             let dic = json![0]
