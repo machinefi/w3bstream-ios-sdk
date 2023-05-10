@@ -18,30 +18,31 @@ To get started, follow these steps:
 The detail steps at [https://iotex.larksuite.com/docx/UawQd67JPopjqHxlSZmuV9HjsEh](https://iotex.larksuite.com/docx/UawQd67JPopjqHxlSZmuV9HjsEh) 
 
 ### Init the instance
-Initialize the W3bstream instance with the URLs of your project, as shown below:
+Initialize the W3bstream instance with the URLs of your project, as shown below.:
 ```   
 import w3bstream
-
-let imei
-let url = "https://api.w3bstream.com/srv-applet-mgr/v0/event/yourprojectname"
+let url = "http://dev.w3bstream.com:8889/srv-applet-mgr/v0/event/eth_0x2ee1d96cb76579e2c64c9bb045443fb3849491d2_geo_example_claim_nft"
 let w3bStream = W3bStream(urls: [URL(string: url)!])
 ```
 
 ### Make the payload
-Create the payload in JSON format and then encode it as Base64, as shown below:
+Create the payload, the content is arbitrary. For example, we upload the designated location and the wallet address to receive the nft from the w3bstream service .
 ```   
-let latitude = 31.8912140
-let longitude = 108.7645030
 let timestamp = Int32(round(Date().timeIntervalSince1970))
-let jsonstring = """
-    {
+let latitude = 100
+let longitude = 100
+let imei
+let walletAddress = "0x2eE1d96CB76579e2c64C9BB045443Fb3849491D2"
+        
+var dic: [String: Any] = [
         "latitude": "\(latitude)",
         "longitude": "\(longitude)",
-        "timestamp": \(timestamp),
-        "imei": "\(imei)"
-    }
-"""
-let payload = jsonstring.base64Encoded()
+        "timestamp": timestamp,
+        "imei": imei,
+        "walletAddress": walletAddress
+    ]
+        
+let payload = dic
 ```   
 
 
@@ -49,20 +50,15 @@ let payload = jsonstring.base64Encoded()
 Upload the payload data to your project on W3bstream using the  `upload`  method, as shown below:
 
 ```
-let event_id = "yougenerateuuid" //generate by the developer
-let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQYXlsb2FkIjoiMTc4MTE5MDc5NDgxNTA1OTk2OSIsImlzcyI6InczYnN0cmVhbSJ9.B1I982yTXgPTl7sfBrmDcx471Qz_1Z3fvd-5qA2VZnQ"
-let pub_id = "publishkey01"
-let event_id = "uuidyougenerated"
-let pub_time = Int(Date().timeIntervalSince1970 * 1000)
+let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQYXlsb2FkIjoiOTAyNTQ3MTgxNzYxMDI0NSIsImlzcyI6InczYnN0cmVhbSJ9.8uY4gGMBk4bJwyBsqTY3wGqMPnfSIggfw54k0ln6fwY"
+let eventType = "DEFAULT"
+let timestamp = Int(Date().timeIntervalSince1970 * 1000)
 
-let header = W3bHeader(eventType: "ANY", event_id: event_id, pub_id: pub_id, pub_time: pub_time, token: token)
+let header = W3bHeader(eventType: eventType, timestamp: timestamp, token: token)
 w3bStream.upload(header: header, payload: payload, completionHandler: { data, err in
         if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]]{
-            let dic = json![0]
-            if let wasmResults = dic["wasmResults"] as? [String: Any] {
-            }
         }
-}
+})
 ```
 ### Check the result
 Check the logs in the W3bstream website to view the payloads uploaded by your application. The uploaded payloads will be displayed there.
