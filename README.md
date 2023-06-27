@@ -3,7 +3,7 @@
 ### Installation with CocoaPods
 Add the following line to your Podfile:
 ```
-pod 'w3bstream', '1.0.0'
+pod 'w3bstream', '1.0.3'
 ```
 Then run  `pod install`  to install the dependency.
 
@@ -21,8 +21,8 @@ The detail steps at [https://iotex.larksuite.com/docx/UawQd67JPopjqHxlSZmuV9HjsE
 Initialize the W3bstream instance with the URLs of your project, as shown below.:
 ```   
 import w3bstream
-let url = "http://dev.w3bstream.com:8889/srv-applet-mgr/v0/event/eth_0x2ee1d96cb76579e2c64c9bb045443fb3849491d2_geo_example_claim_nft"
-let w3bStream = W3bStream(urls: [URL(string: url)!])
+
+let w3bStream = W3bStream(url: "http://dev.w3bstream.com:8889/srv-applet-mgr/v0/event/eth_0x2ee1d96cb76579e2c64c9bb045443fb3849491d2_geo_example_claim_nft", eventType: "DEFAULT", token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQYXlsb2FkIjoiOTAyNTQ3MTgxNzYxMDI0NSIsImlzcyI6InczYnN0cmVhbSJ9.8uY4gGMBk4bJwyBsqTY3wGqMPnfSIggfw54k0ln6fwY")
 ```
 
 ### Make the payload
@@ -50,12 +50,7 @@ let payload = dic
 Upload the payload data to your project on W3bstream using the  `upload`  method, as shown below:
 
 ```
-let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQYXlsb2FkIjoiOTAyNTQ3MTgxNzYxMDI0NSIsImlzcyI6InczYnN0cmVhbSJ9.8uY4gGMBk4bJwyBsqTY3wGqMPnfSIggfw54k0ln6fwY"
-let eventType = "DEFAULT"
-let timestamp = Int(Date().timeIntervalSince1970 * 1000)
-
-let header = W3bHeader(eventType: eventType, timestamp: timestamp, token: token)
-w3bStream.upload(header: header, payload: payload, completionHandler: { data, err in
+w3bStream.upload(payload: payload, completionHandler: { data, err in
         if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [[String: Any]]{
         }
 })
