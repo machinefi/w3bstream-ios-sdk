@@ -1,21 +1,13 @@
 PODS:
-  - BigInt.swift (1.0.0)
-  - CryptoSwift (1.5.1)
   - Realm (10.38.0):
     - Realm/Headers (= 10.38.0)
   - Realm/Headers (10.38.0)
   - RealmSwift (10.38.0):
     - Realm (= 10.38.0)
   - SnapKit (5.6.0)
-  - Starscream (4.0.4)
-  - SwiftKeychainWrapper (4.0.1)
   - SwiftLocation/Core (5.1.0)
   - Toast-Swift (5.0.1)
-  - w3bstream (1.0.1):
-    - BigInt.swift
-    - CryptoSwift
-    - Starscream (~> 4.0.0)
-    - SwiftKeychainWrapper
+  - w3bstream (1.0.3)
 
 DEPENDENCIES:
   - RealmSwift
@@ -26,13 +18,9 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - BigInt.swift
-    - CryptoSwift
     - Realm
     - RealmSwift
     - SnapKit
-    - Starscream
-    - SwiftKeychainWrapper
     - SwiftLocation
     - Toast-Swift
 
@@ -41,17 +29,13 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  BigInt.swift: 1e0ddf08d82166e72dfb0fa8d40301d273081afc
-  CryptoSwift: c4f2debceb38bf44c80659afe009f71e23e4a082
   Realm: 5902885dd1d5e71b0b020830caab937ecdf5bf07
   RealmSwift: 0fc037d6c32c7c4fc9362892380f380114ecdcf0
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
-  SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
   SwiftLocation: 83e0ea75a1969cee3a1197e2b7095603fc23fde5
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
-  w3bstream: a2a6ee1d920b163ff0cd9e8af896b14831aa33fd
+  w3bstream: 7a72c8c4d0a8d1889f75d3305a9447560b847816
 
 PODFILE CHECKSUM: 9ad30dbddbbf766616ee9c3840e562aec8f4bd8a
 
-COCOAPODS: 1.12.0
+COCOAPODS: 1.12.1

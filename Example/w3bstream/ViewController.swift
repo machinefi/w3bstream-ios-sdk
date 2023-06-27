@@ -74,23 +74,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        
+        let eventType = "DEFAULT"
+        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQYXlsb2FkIjoiOTAyNTQ3MTgxNzYxMDI0NSIsImlzcyI6InczYnN0cmVhbSJ9.8uY4gGMBk4bJwyBsqTY3wGqMPnfSIggfw54k0ln6fwY"
+
         if let url = URL(string: urlLabel.text!), w3bStream == nil {
-            w3bStream = W3bStream(urls: [url])
+            w3bStream = W3bStream(url: url, eventType: eventType, token: token)
         }
         
         uploadBtn.isSelected = true
         makeNewData()
         let interval = (intervaltf.text?.isEmpty ?? true) ? 0 : Int(intervaltf.text!)!
         
-        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQYXlsb2FkIjoiOTAyNTQ3MTgxNzYxMDI0NSIsImlzcyI6InczYnN0cmVhbSJ9.8uY4gGMBk4bJwyBsqTY3wGqMPnfSIggfw54k0ln6fwY"
-        let eventType = "DEFAULT"
-        let timestamp = Int(Date().timeIntervalSince1970 * 1000)
         if timer == nil {
             timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(interval), repeats: interval > 0) { _ in
                 
-                let header = W3bHeader(eventType: eventType, timestamp: timestamp, token: token)
-                self.w3bStream?.upload( header: header, payload: self.json, completionHandler: { data, err in
+                self.w3bStream?.upload(payload: self.json, completionHandler: { data, err in
                     guard let data = data else {
                         print("\(err)")
                         return
