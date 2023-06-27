@@ -21,28 +21,25 @@ extension Dictionary {
 }
 
 class ViewController: UIViewController, UITextFieldDelegate {
-    @IBOutlet weak var imeitf: UITextField!
     @IBOutlet weak var intervaltf: UITextField!
+    @IBOutlet weak var tokenField: UITextField!
     @IBOutlet weak var walletAddresstf: UITextField!
-    @IBOutlet weak var urlLabel: UILabel!
+    @IBOutlet weak var urlField: UITextField!
     @IBOutlet weak var uploadBtn: UIButton!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var dataLabel: UILabel!
     @IBOutlet weak var tipLabel: UILabel!
     var timer: Timer?
     var hisvc = HistoryViewController()
-    
+    var imei: String = ""
     var w3bStream: W3bStream?
     var coordinate: CLLocationCoordinate2D?
     var json = [String: Any]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let IMEI = "100" + String("\(Int(arc4random_uniform(899999) + 100000))") + String("\(Int(arc4random_uniform(899999) + 100000))")
-        imeitf.text = IMEI
+        imei = "100" + String("\(Int(arc4random_uniform(899999) + 100000))") + String("\(Int(arc4random_uniform(899999) + 100000))")
         intervaltf.text = "50"
-        urlLabel.text = "http://dev.w3bstream.com:8889/srv-applet-mgr/v0/event/eth_0x2ee1d96cb76579e2c64c9bb045443fb3849491d2_geo_example_claim_nft"
-        walletAddresstf.text = "0x2eE1d96CB76579e2c64C9BB045443Fb3849491D2"
         addChildViewController(hisvc)
         containerView.addSubview(hisvc.view)
         hisvc.view.snp.makeConstraints { make in
@@ -69,15 +66,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        guard imeitf.text?.isEmpty == false else {
-            self.view.makeToast("IMEI cannot be empty")
-            return
-        }
-        
         let eventType = "DEFAULT"
-        let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQYXlsb2FkIjoiOTAyNTQ3MTgxNzYxMDI0NSIsImlzcyI6InczYnN0cmVhbSJ9.8uY4gGMBk4bJwyBsqTY3wGqMPnfSIggfw54k0ln6fwY"
+        let token = tokenField.text!
 
-        if let url = URL(string: urlLabel.text!), w3bStream == nil {
+        if let url = URL(string: urlField.text!), w3bStream == nil {
             w3bStream = W3bStream(url: url, eventType: eventType, token: token)
         }
         
@@ -138,13 +130,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let timestamp = Int32(round(Date().timeIntervalSince1970))
         let latitude = 100
         let longitude = 100
-        let walletAddress = walletAddresstf.text ?? ""
         
         var dic: [String: Any] = [
             "latitude": "\(latitude)",
             "longitude": "\(longitude)",
             "timestamp": timestamp,
-            "imei": "\(imeitf.text!)"
+            "imei": "\(imei)"
         ]
         
         if let walletAddress = walletAddresstf.text {
