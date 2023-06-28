@@ -21,8 +21,9 @@ The detail steps at [https://iotex.larksuite.com/docx/UawQd67JPopjqHxlSZmuV9HjsE
 Initialize the W3bstream instance with the URLs of your project, as shown below.:
 ```   
 import w3bstream
-
-let w3bStream = W3bStream(url: "https://devnet-prod-api.w3bstream.com/srv-applet-mgr/v0/event/eth_0x2ee1d96cb76579e2c64c9bb045443fb3849491d2_get_nft_near_location", eventType: "DEFAULT", token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQYXlsb2FkIjoiNjc3ODIwMjA4Mjc0MDIyNCIsImlzcyI6InczYnN0cmVhbSJ9.sN9pPsoRP-bRfKY2i1_qw9fRyigGRK6XT5osrdJbk7A")
+let url = "https://devnet-prod-api.w3bstream.com/srv-applet-mgr/v0/event/eth_0x2ee1d96cb76579e2c64c9bb045443fb3849491d2_get_nft_near_location"
+let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJQYXlsb2FkIjoiNjc3ODIwMjA4Mjc0MDIyNCIsImlzcyI6InczYnN0cmVhbSJ9.sN9pPsoRP-bRfKY2i1_qw9fRyigGRK6XT5osrdJbk7A"
+let w3bStream = W3bStream(url: url, eventType: "DEFAULT", token: token)
 ```
 
 ### Make the payload
